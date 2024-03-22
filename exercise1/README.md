@@ -64,16 +64,16 @@ fn my_first_test() {
 }
 ```
 
-- c. definire almeno questi test:
-  i. conversione lettera accentata
-  ii. conversione lettera non accentata
-  iii. conversione lettera non ammessa sconosciuta
-  iv. conversione lettera accentata non compresa nella lista (es ῶ)
-  v. stringa con più di una parola separata da spazio
-  vi. stringa con caratteri accentati
-  vii. stringa vuota
-  viii. stringa con più spazi consecutivi
-  ix. stringa con con più caratteri non validi consecutivi
-  x. stringa con solo caratteri non validi
-  xi. stringa con spazio alla fine
-  xii. stringa con più caratteri non validi consecutivi alla fine
+- c. definire almeno questi test:  
+  i. conversione lettera accentata  
+  ii. conversione lettera non accentata  
+  iii. conversione lettera non ammessa sconosciuta  
+  iv. conversione lettera accentata non compresa nella lista (es ῶ)  
+  v. stringa con più di una parola separata da spazio  
+  vi. stringa con caratteri accentati  
+  vii. stringa vuota  
+  viii. stringa con più spazi consecutivi  
+  ix. stringa con più caratteri non validi consecutivi  
+  x. stringa con solo caratteri non validi  
+  xi. stringa con spazio alla fine  
+  xii. stringa con più caratteri non validi consecutivi alla fine  
