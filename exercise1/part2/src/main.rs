@@ -1,3 +1,4 @@
+use std::fmt::Display;
 use std::fs::{read, read_to_string};
 use std::fs::write;
 use std::time::SystemTime;
@@ -53,8 +54,12 @@ enum Error{
     Complex(SystemTime, String)
 }
 
+
 fn print_error(e: Error) -> (){
-    
+    match e{
+        Error::Simple(_) => {println!("[SIMPLE ERROR]");}
+        Error::Complex(_, error_str) => {println!("[COMPLEX ERROR]: {}", error_str);}
+    }
 }
 
 //**********{PARTE 3}**************
