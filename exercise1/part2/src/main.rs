@@ -77,6 +77,57 @@ pub fn mul(a: i32, b: i32) -> Result<u32, MulErr> {
 
 //**********{PROPEDEUTICO 4}**************
 
+struct Node {
+    name: String,
+    size: u32,
+    count: u32,
+}
+impl Node {
+
+    //[ATTENZIONE]:     Con questi 3 metodi il comando Node::new("ciao".to_string()).size(10).count(5);
+    //                  deve creare 3 Nodi diversi, il che è sicuramente molto oneroso. Perciò ho deciso
+    //                  di utilizzare la versione con mut self
+    pub fn new(name: String) -> Self {
+        Node {name, size: 0, count: 0 }
+    }
+
+    // pub fn size(&self, size: u32) -> Self{
+    //     Node{name: self.name.clone(), size, count: self.count}
+    // }
+    pub fn size(mut self, size: u32) -> Self{
+        self.size = size;
+        self
+    }
+
+    // pub fn count(self, count: u32) -> Self{
+    //     Node{name: self.name, size: self.size, count}
+    // }
+    pub fn count(mut self, count: u32) -> Self{
+        self.count = count;
+        self
+    }
+    //-------------------------------------------------------------------------------------------------
+
+    pub fn to_string(&self) -> String{
+        let mut string = String::new();
+        string.push_str("name:");
+        string.push_str(self.name.as_str());
+        string.push_str(" size:");
+        string.push_str(self.size.to_string().as_str());
+        string.push_str(" count:");
+        string.push_str(self.count.to_string().as_str());
+        string
+    }
+
+    pub fn grow(mut self){
+        self.size += 1;
+    }
+
+    pub fn inc(mut self){
+        self.count += 1;
+    }
+
+}
 
 
 
@@ -86,6 +137,9 @@ pub fn mul(a: i32, b: i32) -> Result<u32, MulErr> {
 
 fn main() {
     //read_file("src/test.txt");
+
+    // let node = Node::new("ciao".to_string()).size(10).count(5);
+    // println!("{}", node.to_string());
 
 
 }
