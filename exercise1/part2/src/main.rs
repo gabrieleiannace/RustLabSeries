@@ -10,7 +10,7 @@ use crate::MulErr::{NegativeNumber, Overflow};
 
 
 
-//**********{PARTE 1}**************
+//**********{PROPEDEUTICO 1}**************
 
 
 //  [RISULTATO]:    Qui è messo in evidenza che bisogna codificare
@@ -50,7 +50,7 @@ fn read_file(file_name: &str) -> (){
     }
 }
 
-//**********{PARTE 2}**************
+//**********{PROPEDEUTICO 2}**************
 enum Error{
     Simple(SystemTime),
     Complex(SystemTime, String)
@@ -64,7 +64,7 @@ fn print_error(e: Error) -> (){
     }
 }
 
-//**********{PARTE 3}**************
+//**********{PROPEDEUTICO 3}**************
 pub enum MulErr{
     Overflow,
     NegativeNumber
@@ -75,10 +75,17 @@ pub fn mul(a: i32, b: i32) -> Result<u32, MulErr> {
     return if res < 0 { Err(NegativeNumber) } else if res > u32::MAX as i32 { Err(Overflow) } else { Ok(res as u32) }
 }
 
+//**********{PROPEDEUTICO 4}**************
+
+
+
+
+
+
 //----------------------------------------------------------
 
 fn main() {
     //read_file("src/test.txt");
-    
+
 
 }
