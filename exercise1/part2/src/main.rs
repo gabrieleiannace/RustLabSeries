@@ -1,7 +1,9 @@
 use std::fmt::Display;
 use std::fs::{read, read_to_string};
 use std::fs::write;
+use std::result;
 use std::time::SystemTime;
+use crate::MulErr::{NegativeNumber, Overflow};
 
 
 //-------------[ESERCIZI PROPEDEUTICI]-------------
@@ -63,10 +65,20 @@ fn print_error(e: Error) -> (){
 }
 
 //**********{PARTE 3}**************
+pub enum MulErr{
+    Overflow,
+    NegativeNumber
+}
 
+pub fn mul(a: i32, b: i32) -> Result<u32, MulErr> {
+    let res = a*b;
+    return if res < 0 { Err(NegativeNumber) } else if res > u32::MAX as i32 { Err(Overflow) } else { Ok(res as u32) }
+}
 
 //----------------------------------------------------------
 
 fn main() {
-    read_file("src/test.txt");
+    //read_file("src/test.txt");
+    
+
 }
