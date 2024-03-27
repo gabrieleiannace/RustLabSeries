@@ -1,10 +1,13 @@
-use std::fmt::Display;
-use std::fs::{read, read_to_string};
-use std::fs::write;
-use std::result;
-use std::time::SystemTime;
-use crate::MulErr::{NegativeNumber, Overflow};
+mod args;
 
+use std::fmt::{Display, Pointer};
+use std::fs::{read_to_string};
+use std::fs::write;
+use std::time::SystemTime;
+use clap::builder::TypedValueParser;
+use crate::MulErr::{NegativeNumber, Overflow};
+use clap::Parser;
+use crate::args::{CommandsOption};
 
 //-------------[ESERCIZI PROPEDEUTICI]-------------
 
@@ -51,16 +54,16 @@ fn read_file(file_name: &str) -> (){
 }
 
 //**********{PROPEDEUTICO 2}**************
-enum Error{
+enum Errore{
     Simple(SystemTime),
     Complex(SystemTime, String)
 }
 
 
-fn print_error(e: Error) -> (){
+fn print_error(e: Errore) -> (){
     match e{
-        Error::Simple(_) => {println!("[SIMPLE ERROR]");}
-        Error::Complex(_, error_str) => {println!("[COMPLEX ERROR]: {}", error_str);}
+        Errore::Simple(_) => {println!("[SIMPLE ERROR]");}
+        Errore::Complex(_, error_str) => {println!("[COMPLEX ERROR]: {}", error_str);}
     }
 }
 
@@ -128,10 +131,86 @@ impl Node {
     }
 
 }
+//----------------------------------------------------------
 
+//---------------------[ESERCIZIO 2]---------------------
 
+const BSIZE: usize = 20;
+const BOAT_NUM: usize = 4;
+pub struct Board {
+    boats: [u8; BOAT_NUM],                    //Numero di navi
+    data: [[u8; BSIZE]; BSIZE],               //Matrice
+}
 
+pub enum Error {
+    Overlap,
+    OutOfBounds,
+    BoatCount,
+}
 
+pub enum Boat {
+    Vertical(usize),
+    Horizontal(usize)
+}
+
+impl Board{
+    /** crea una board vuota con una disponibilità di navi */
+    pub fn new(boats: &[u8]) -> Board {
+        let mut boat_array: [u8; BOAT_NUM] = [0; BOAT_NUM];
+        for i in 0..boats.len(){
+            boat_array[i] = boats[i];
+        }
+        Board{ boats: boat_array, data: [[0;BSIZE]; BSIZE] }
+    }
+
+    /*  crea una board a partire da una stringa che rappresenta tutto
+        il contenuto del file board.txt                                 */
+    pub fn from(s: String)->Board {
+        // Split in righe
+        let mut rows_string: Vec<&str> = s.split('\n').collect();
+        let first_row: Vec<&str> = rows_string[0].split(" ").collect();
+        let mut matrix_rows = &rows_string[1..];
+
+        let mut boat_array: [u8; BOAT_NUM] = [0; BOAT_NUM];
+        for i in 0..BOAT_NUM {
+            if let Ok(num) = first_row[i].parse::<u8>() {
+                boat_array[i] = num;
+            }
+        }
+
+        let mut matrix_data: [[u8; BSIZE]; BSIZE] = [[0; BSIZE]; BSIZE];
+        for i in 0..BSIZE {
+            for (counter, c) in matrix_rows[i].chars().enumerate() {
+                println!("{:?}{:?}", counter, c);
+                if c == ' ' { matrix_data[i][counter] = 0u8} else { matrix_data[i][counter] = 1u8}
+            }
+        }
+
+        Board{ boats: boat_array, data: matrix_data }
+    }
+
+    /* converte la board in una stringa salvabile su file */
+    pub fn to_string(&self) -> String {
+        // Riga delle navi
+        let mut board_string = String::new();
+        for i in 0..BOAT_NUM-1 {
+            board_string.push_str(self.boats[i].to_string().as_str());
+            board_string.push_str(" ");
+        }
+        board_string.push_str(self.boats[BOAT_NUM-1].to_string().as_str());
+        board_string.push_str("\n");
+
+        //Riga della matrice
+        for riga in self.data {
+            for val in riga {
+                if val == 0u8 {board_string.push_str(" ")} else {board_string.push_str("B")}
+            }
+            board_string.push_str("\n");
+        }
+        board_string.pop();
+        board_string
+    }
+}
 
 //----------------------------------------------------------
 
@@ -141,5 +220,14 @@ fn main() {
     // let node = Node::new("ciao".to_string()).size(10).count(5);
     // println!("{}", node.to_string());
 
+    let board = Board::new(&[2, 3, 4, 5]);
+    let pippo = board.to_string();
+    let new_board = Board::from(pippo);
 
+    let args = CommandsOption::parse();
+    println!("{:?}", args);
+    match args {
+        CommandsOption::CreateBoard(_) => {}
+        CommandsOption::AddBoat(_) => {}
+    }
 }
