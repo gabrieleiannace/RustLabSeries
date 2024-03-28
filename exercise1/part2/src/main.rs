@@ -1,13 +1,15 @@
 mod args;
 
-use std::fmt::{Display, Pointer};
+use std::fmt::{Debug, Display, Pointer};
+use std::fs;
 use std::fs::{read_to_string};
 use std::fs::write;
+use std::process::exit;
 use std::time::SystemTime;
 use clap::builder::TypedValueParser;
 use crate::MulErr::{NegativeNumber, Overflow};
 use clap::Parser;
-use crate::args::{CommandsOption};
+use crate::args::{AddBoatArgs, CommandsOption};
 
 //-------------[ESERCIZI PROPEDEUTICI]-------------
 
@@ -137,11 +139,13 @@ impl Node {
 
 const BSIZE: usize = 20;
 const BOAT_NUM: usize = 4;
+#[derive(Debug)]
 pub struct Board {
     boats: [u8; BOAT_NUM],                    //Numero di navi
     data: [[u8; BSIZE]; BSIZE],               //Matrice
 }
 
+#[derive(Debug)]
 pub enum Error {
     Overlap,
     OutOfBounds,
@@ -181,12 +185,53 @@ impl Board{
         let mut matrix_data: [[u8; BSIZE]; BSIZE] = [[0; BSIZE]; BSIZE];
         for i in 0..BSIZE {
             for (counter, c) in matrix_rows[i].chars().enumerate() {
-                println!("{:?}{:?}", counter, c);
                 if c == ' ' { matrix_data[i][counter] = 0u8} else { matrix_data[i][counter] = 1u8}
             }
         }
 
         Board{ boats: boat_array, data: matrix_data }
+    }
+
+    /*  aggiunge la nave alla board, restituendo la nuova board se
+        possibile                                                           */
+    /*  bonus: provare a *non copiare* data quando si crea e restituisce
+        una nuova board con la barca, come si può fare?                     */
+    pub fn add_boat(&mut self, boat: Boat, pos: (usize, usize)) -> Result<&mut Board, Error> {
+        match boat {
+            Boat::Vertical(size) => {
+                //[ERRORE]: Non ci sono abbastanza navi
+                if self.boats[size-1] == 0 { return Err(Error::BoatCount); }
+                //[ERRORE]: Out of schema
+                if pos.0 + (size-1) > BSIZE { return Err(Error::OutOfBounds);}
+                //[ERRORE]: Collision
+                for i in 0..size-1 {
+                    if self.data[pos.0-1][pos.1 + i-1] == 1u8 { return Err(Error::Overlap);}
+                }
+
+                //Se nessuno di questi errori, viene aggiunta la barca
+                for i in 0..size {
+                    self.data[pos.0+i-1][pos.1-1] = 1u8;
+                }
+                self.boats[size-1] -= 1;
+            },
+            Boat::Horizontal(size) => {
+                //[ERRORE]: Non ci sono abbastanza navi
+                if self.boats[size-1] == 0 { return Err(Error::BoatCount);}
+                //[ERRORE]: Out of schema
+                if pos.1 + (size-1) > BSIZE { return Err(Error::OutOfBounds);}
+                //[ERRORE]: Collision
+                for i in 0..size {
+                    if self.data[pos.0+i-1][pos.1-1] == 1u8 { return Err(Error::Overlap);}
+                }
+
+                //Se nessuno di questi errori, viene aggiunta la barca
+                for i in 0..size {
+                    self.data[pos.0-1][pos.1+i-1] = 1u8;
+                }
+                self.boats[size-1] -= 1;
+            },
+        }
+        Ok(self)
     }
 
     /* converte la board in una stringa salvabile su file */
@@ -220,14 +265,62 @@ fn main() {
     // let node = Node::new("ciao".to_string()).size(10).count(5);
     // println!("{}", node.to_string());
 
-    let board = Board::new(&[2, 3, 4, 5]);
-    let pippo = board.to_string();
-    let new_board = Board::from(pippo);
+    //Board del gioco
+    let mut board:Board;
 
     let args = CommandsOption::parse();
     println!("{:?}", args);
     match args {
-        CommandsOption::CreateBoard(_) => {}
-        CommandsOption::AddBoat(_) => {}
+        CommandsOption::CreateBoard(args) => {
+            let vec:Vec<&str> = args.boat_string.split(",").collect();
+            let init_array = &mut [0, 0, 0, 0];
+            for (index, c)  in vec.iter().enumerate(){
+                init_array[index] = vec[index].parse::<u8>().unwrap();
+            }
+
+            board = Board::new(init_array);
+            let board_string = board.to_string();
+
+
+            let write_operation = write(args.file_name, &board_string);
+            match write_operation{
+                Ok(_) => {println!("File successfully written!");}
+                Err(error_msg) => {println!("[ERROR]: {}", error_msg)}
+            }
+
+        }
+        CommandsOption::AddBoat(args) => {
+            //Prima popoliamo la Board: Lettura da file
+            match fs::read_to_string(&args.file_name) {
+                Ok(board_string) => {
+                    board = Board::from(board_string);
+                }
+                Err(_) => {
+                    println!("[ERROR]: Bisogna prima creare il file");
+                    exit(1);
+                }
+            }
+
+
+            println!("{}", args.file_name);
+            println!("{}", args.box_and_direction);
+            println!("{}", args.point);
+            let point_vec: Vec<&str> = args.point.split(",").collect();
+            let (x, y) = (point_vec[0].parse::<usize>().unwrap(), point_vec[1].parse::<usize>().unwrap());
+
+            let mut boat = Boat::Vertical(0);
+            let (boat_size, direction) = args.box_and_direction.split_at(1);
+            let boat_size = boat_size.parse::<usize>().unwrap();
+            if direction == "V" {boat = Boat::Vertical(boat_size)} else if direction == "H" {boat = Boat::Horizontal(boat_size)}
+            match board.add_boat(boat, (x, y)){
+                Ok(_) => {},
+                Err(errore) => {println!("[ERROR]: Impossibile aggiungere la barca [{:?}]", errore)}
+            }
+            match fs::write(args.file_name, board.to_string()) {
+                Ok(_) => {}
+                Err(_) => {println!("[ERROR]: Errore durante la scrittura");}
+            }
+
+        }
     }
 }

@@ -15,11 +15,11 @@ pub enum CommandsOption {
 pub struct CreateBoardArgs {
     #[arg()]
     /// The file name
-    file_name: String,
+    pub file_name: String,
 
     #[arg()]
     /// Number of boat with a ,
-    boat_string: String,
+    pub boat_string: String,
 }
 
 #[derive(clap::Args, Debug)]
@@ -27,9 +27,13 @@ pub struct CreateBoardArgs {
 pub struct AddBoatArgs {
     #[arg()]
     /// The file name
-    file_name: String,
+    pub file_name: String,
 
     #[arg()]
     /// Box number and direction [ H / V ]
-    box_and_direction: String,
+    pub box_and_direction: String,
+
+    #[arg()]
+    //Punto sulla board dove far partire l'aggiunta
+    pub point: String
 }
