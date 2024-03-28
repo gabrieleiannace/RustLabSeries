@@ -1,4 +1,5 @@
 mod args;
+mod test;
 
 use std::fmt::{Debug, Display, Pointer};
 use std::fs;
@@ -171,9 +172,9 @@ impl Board{
         il contenuto del file board.txt                                 */
     pub fn from(s: String)->Board {
         // Split in righe
-        let mut rows_string: Vec<&str> = s.split('\n').collect();
+        let rows_string: Vec<&str> = s.split('\n').collect();
         let first_row: Vec<&str> = rows_string[0].split(" ").collect();
-        let mut matrix_rows = &rows_string[1..];
+        let matrix_rows = &rows_string[1..];
 
         let mut boat_array: [u8; BOAT_NUM] = [0; BOAT_NUM];
         for i in 0..BOAT_NUM {
@@ -324,3 +325,4 @@ fn main() {
         }
     }
 }
+
