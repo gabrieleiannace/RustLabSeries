@@ -8,11 +8,25 @@ pub struct Clock{
 
 impl Clock {
     pub fn new(hours: i32, minutes: i32) -> Self {
-        Clock{hours, minutes}
+        let mut hours:i32 = hours;
+        let mut minutes:i32 = minutes;
+
+        let mut rip = minutes/60;
+        if minutes%60 < 0 {
+            rip += -1;
+            minutes = 60 + minutes%60;
+        }
+
+        hours = (hours+rip)%24;
+        if hours%24 < 0 {
+            hours = 24 + hours%24;
+        }
+
+        Clock{hours, minutes: minutes%60}
     }
 
     pub fn add_minutes(&self, minutes: i32) -> Self {
-        todo!("Add {minutes} minutes to existing Clock time");
+        Clock::new(self.hours, self.minutes + minutes)
     }
 }
 
