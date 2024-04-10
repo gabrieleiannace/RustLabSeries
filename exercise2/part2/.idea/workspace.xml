@@ -8,21 +8,84 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf01302e-f67d-4ba2-be0c-6702b621770d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/part2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/CACHEDIR.TAG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/.cargo-lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/part2-0d9382c4e3c8b216/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/part2-0d9382c4e3c8b216/test-lib-part2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/part2-0d9382c4e3c8b216/test-lib-part2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/part2-fd68a84a1cde4acb/invoked.timestamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/part2-fd68a84a1cde4acb/lib-part2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/debug/.fingerprint/part2-fd68a84a1cde4acb/lib-part2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/complex_numbers.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../part1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part2-8da33b4f02bf582f/output-test-integration-test-complex_numbers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part2-8da33b4f02bf582f/test-integration-test-complex_numbers" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/.fingerprint/part2-8da33b4f02bf582f/test-integration-test-complex_numbers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/complex_numbers-8da33b4f02bf582f.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/complex_numbers-8da33b4f02bf582f.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/complex_numbers-8da33b4f02bf582f.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/complex_numbers-8da33b4f02bf582f.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/libpart2-5b952e19ae39bd82.rlib" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/libpart2-5b952e19ae39bd82.rlib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/libpart2-5b952e19ae39bd82.rmeta" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/libpart2-5b952e19ae39bd82.rmeta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/1apn7x4iohwfbu9p.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/1egyzder4051zo3f.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/1koww85li1imm2ds.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/1t6t72vuk8pj3vdq.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/1xx1mk8nhgv8vffm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/1zyv5dcbtkysrbn8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/2chot1u495jb78jv.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/2n1in7ntxsboubrp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/2tx89kousmksx3l2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/2uymcacmjyte4w09.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/3d8m918gg1qra8xn.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/3jrtg1dtkh5mfw8y.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/40xklrvi3lkz2ujl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/41gx1o3z2viek9d1.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/43ezv4dxczkyin8c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/44kzucmfjh3q9m55.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/4boug0qtc3ow5eq0.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/4f6om1gubdja7dhi.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/4m8g8t6btwcc6a3g.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/4rc99jog8oqofjim.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/54oxg2t8scxm4jgk.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/55pxsjk00iu9izfy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/58prwpt5znluwe7x.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/5bnjjde564rbtji9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/sak83jdxl0helb4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/tdmm01xr4tanpzn.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa-8e4vq20tmgv9f62feibipikuy/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jo9xung-j80hsa.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/1apn7x4iohwfbu9p.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/1egyzder4051zo3f.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/1koww85li1imm2ds.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/1t6t72vuk8pj3vdq.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/1xx1mk8nhgv8vffm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/1zyv5dcbtkysrbn8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/2chot1u495jb78jv.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/2n1in7ntxsboubrp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/2tx89kousmksx3l2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/2uymcacmjyte4w09.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/3d8m918gg1qra8xn.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/3jrtg1dtkh5mfw8y.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/40xklrvi3lkz2ujl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/41gx1o3z2viek9d1.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/43ezv4dxczkyin8c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/44kzucmfjh3q9m55.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/4boug0qtc3ow5eq0.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/4f6om1gubdja7dhi.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/4m8g8t6btwcc6a3g.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/4rc99jog8oqofjim.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/54oxg2t8scxm4jgk.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/55pxsjk00iu9izfy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/58prwpt5znluwe7x.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/5bnjjde564rbtji9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/sak83jdxl0helb4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/tdmm01xr4tanpzn.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/complex_numbers-1v9nrlqbhi8nh/s-gv4jsvh61e-1rvljhy.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/17d4on1i6j31wilu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/21zqvsohvg370cqp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/2l352j6clpue5wsw.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/3bn0li5dwbkfqi38.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/3fcpj5wpcnvpd0jw.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/3sss03ckbnhqjls1.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe-99k17is6340l3wmqqezxedzp6/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part2-1keovkmsnbqse/s-gv4jbok5zq-hsqgxe.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/complex_numbers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/complex_numbers.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +270,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712758428555</updated>
-      <workItem from="1712758431441" duration="11785000" />
+      <workItem from="1712758431441" duration="12126000" />
     </task>
     <servers />
   </component>

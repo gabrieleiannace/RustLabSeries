@@ -127,7 +127,7 @@ pub fn test_try_into_f64() {
 
     // Test failure condition
     let complex_failure = ComplexNumber::new(1.0, 1.0);
-    assert_eq!(complex_success.try_into().is_err(), true);
+    assert_eq!(true, <ComplexNumber as TryInto<f64>>::try_into(complex_failure).is_err());
 }
 
 // #[test]
