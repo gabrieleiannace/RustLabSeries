@@ -94,7 +94,7 @@
       <workItem from="1711130349682" duration="525000" />
       <workItem from="1711130959562" duration="19000" />
       <workItem from="1711184650975" duration="69000" />
-      <workItem from="1712748371301" duration="7007000" />
+      <workItem from="1712748371301" duration="7419000" />
     </task>
     <task id="LOCAL-00001" summary="README.md">
       <option name="closed" value="true" />
@@ -117,6 +117,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
