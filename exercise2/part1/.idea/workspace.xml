@@ -16,6 +16,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "gabrieleiannace"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="65172fbd-83d2-4bb9-acca-1d42fce0cc3d" />
+        <option name="url" value="https://github.com/gabrieleiannace/RustLabSeries.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="6envev77" />
   </component>
@@ -44,7 +58,7 @@
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/gabri/RustroverProjects/RustLabSeries/exercise2/part1",
+    "last_opened_file_path": "C:/Users/gabri/RustroverProjects/RustLabSeries",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,7 +108,7 @@
       <workItem from="1711130349682" duration="525000" />
       <workItem from="1711130959562" duration="19000" />
       <workItem from="1711184650975" duration="69000" />
-      <workItem from="1712748371301" duration="7419000" />
+      <workItem from="1712748371301" duration="7831000" />
     </task>
     <task id="LOCAL-00001" summary="README.md">
       <option name="closed" value="true" />
