@@ -1,3 +1,4 @@
+use std::collections::VecDeque;
 use part2::solution::ComplexNumber;
 
 // for this execise see https://doc.rust-lang.org/beta/std/primitive.f64.html
@@ -185,53 +186,80 @@ pub fn test_as_ref() {
     assert_eq!(*r, 1.0);
 }
 
-// #[test]
-// pub fn test_as_mut() {
-//     // implement AsMut<f64> for ComplexNumber
-//     // allow a mutable ref to real part as &mut f64
-//
-//     let mut a = ComplexNumber::new(1.0, 2.0);
-//     let r = a.as_mut();
-//
-//     *r = 10.0;
-//
-//     assert_eq!(a.real(), 10.0);
-// }
-//
-// #[test]
-// pub fn test_hash_with_hash_map() {
-//     // in order to use comeplex numbers in a hash map we need to implement Hash
-//     // https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md#hash
-//     // we can use the to_bits method from f64 to get a u64 representation of the float
-//     let a = ComplexNumber::new(1.0, 2.0);
-//     let b = ComplexNumber::new(2.0, 4.0);
-//     let c: ComplexNumber = 3.0.into();
-//
-//     let mut map = std::collections::HashMap::new();
-//
-//     // first insert must return None: not present
-//     match map.insert(a, b) {
-//         None => assert!(true),
-//         Some(_) => assert!(false)
-//     };
-//
-//     // trty ro replace value with c
-//     match map.insert(a, c) {
-//         None => assert!(false),
-//         Some(x) => assert_eq!(x.to_tuple(), (2.0, 4.0)) // should return the old value, b
-//     };
-//
-//
-// }
-//
-//
-// #[test]
-// pub fn test_deque() {
-//     // implement VecDeque for ComplexNumber
-//     // 1. create a VecDeque with capacity 10
-//     // 2. push 10 values in the deque
-//     // 4. find the index of a value with binary_search: it works only if the deque is sorted!!!
-//     // 5. check the result: it should be meaningless
-//     // 3. sort the deque and check afain the result of binary_search, now it should be meaningful
-//
-// }
+#[test]
+pub fn test_as_mut() {
+    // implement AsMut<f64> for ComplexNumber
+    // allow a mutable ref to real part as &mut f64
+
+    let mut a = ComplexNumber::new(1.0, 2.0);
+    let r = a.as_mut();
+
+    *r = 10.0;
+
+    assert_eq!(a.real(), 10.0);
+}
+
+#[test]
+pub fn test_hash_with_hash_map() {
+    // in order to use comeplex numbers in a hash map we need to implement Hash
+    // https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md#hash
+    // we can use the to_bits method from f64 to get a u64 representation of the float
+    let a = ComplexNumber::new(1.0, 2.0);
+    let b = ComplexNumber::new(2.0, 4.0);
+    let c: ComplexNumber = 3f64.into();
+
+    let mut map = std::collections::HashMap::new();
+
+    // first insert must return None: not present
+    match map.insert(a, b) {
+        None => assert!(true),
+        Some(_) => assert!(false)
+    };
+
+    // try ro replace value with c
+    match map.insert(a, c) {
+        None => assert!(false),
+        Some(x) => assert_eq!(x.to_tuple(), (2.0, 4.0)) // should return the old value, b
+    };
+
+
+}
+
+
+#[test]
+pub fn test_deque() {
+    // implement VecDeque for ComplexNumber
+    // 1. create a VecDeque with capacity 10
+    let mut vec:VecDeque<ComplexNumber> = VecDeque::with_capacity(10);
+    // 2. push 10 values in the deque
+    let value1 = ComplexNumber::new(2.0, 0.2);
+    vec.push_back(value1);
+    let value2 = ComplexNumber::new(1.0, 1.2);
+    vec.push_back(value2);
+    let value3 = ComplexNumber::new(7.0, 3.2);
+    vec.push_back(value3);
+    let value4 = ComplexNumber::new(12.0, 2.2);
+    vec.push_back(value4);
+    let value5 = ComplexNumber::new(3.0, 5.2);
+    vec.push_back(value5);
+    let value6 = ComplexNumber::new(22.0, 4.2);
+    vec.push_back(value6);
+    let value7 = ComplexNumber::new(24.0, 3.2);
+    vec.push_back(value7);
+    let value8 = ComplexNumber::new(19.0, 4.2);
+    vec.push_back(value8);
+    let value9 = ComplexNumber::new(10.0, 5.2);
+    vec.push_back(value9);
+    let value10 = ComplexNumber::new(55.0, 6.2);
+    vec.push_back(value10);
+    // 4. find the index of a value with binary_search: it works only if the deque is sorted!!!
+    let result = vec.binary_search(&ComplexNumber::new(10.0, 5.2));
+    // 5. check the result: it should be meaningless
+    println!("{:?}", result);
+    // 6. sort the deque and check afain the result of binary_search, now it should be meaningful
+    let mut vec2:Vec<ComplexNumber> = vec.into();
+    vec2.sort();
+    vec = vec2.into();
+    let result = vec.binary_search(&ComplexNumber::new(10.0, 5.2));
+    assert_eq!(4, result.unwrap());
+}

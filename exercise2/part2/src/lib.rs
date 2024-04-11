@@ -1,6 +1,8 @@
 pub mod solution{
     use std::cmp::Ordering;
+    use std::collections::VecDeque;
     use std::fmt::{Formatter};
+    use std::hash::{Hash, Hasher};
 
     #[derive(Copy, Clone, Debug)]
     pub struct ComplexNumber{
@@ -100,6 +102,14 @@ pub mod solution{
     //     }
     // }
 
+    impl From<f64> for ComplexNumber{
+        fn from(value: f64) -> Self {
+            Self{
+                real: value, imag: 0.0
+            }
+        }
+    }
+
     impl TryFrom<ComplexNumber> for f64{
         type Error = CustomError;
 
@@ -139,6 +149,24 @@ pub mod solution{
         }
     }
 
+    impl AsRef<f64> for ComplexNumber {
+        fn as_ref(&self) -> &f64 {
+            &self.real
+        }
+    }
+
+    impl AsMut<f64> for ComplexNumber{
+        fn as_mut(&mut self) -> &mut f64 {
+            &mut self.real
+        }
+    }
+
+    impl Hash for ComplexNumber{
+        fn hash<H: Hasher>(&self, state: &mut H) {
+            self.real.to_bits().hash(state);
+            self.imag.to_bits().hash(state);
+        }
+    }
 
 
     //Mi scrivo il mio errore:
