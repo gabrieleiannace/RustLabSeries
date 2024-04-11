@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf01302e-f67d-4ba2-be0c-6702b621770d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +20,9 @@
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="gj3rz7wc" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -203,7 +205,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712758428555</updated>
       <workItem from="1712758431441" duration="13611000" />
-      <workItem from="1712823738998" duration="10526000" />
+      <workItem from="1712823738998" duration="10781000" />
     </task>
     <servers />
   </component>
