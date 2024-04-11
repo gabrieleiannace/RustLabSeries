@@ -11,7 +11,10 @@ elementi in coda ed estrarli dalla testa.
 Idealmente può essere visto come un cerchio con due puntatori: head e tail. Nella cella
 indicata da tail scrivo il valore successivo, in quella indicata da head leggo il valore corrente.
 
-![Coda circolare](C:\Users\gabri\RustroverProjects\RustLabSeries\exercise2\part3\images\coda_circolare.png)
+<p align="center">
+  <img src="images/coda_circolare.png" alt="Coda circolare">
+</p>
+
 
 
 Quando è pieno non è più possibile inserire valori e restituisce errore, quando è vuoto
