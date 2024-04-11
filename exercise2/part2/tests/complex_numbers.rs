@@ -130,58 +130,61 @@ pub fn test_try_into_f64() {
     assert_eq!(true, <ComplexNumber as TryInto<f64>>::try_into(complex_failure).is_err());
 }
 
-// #[test]
-// pub fn test_try_form_f64() {
-//     // write a trait allowing let complex = f64.into()
-//     // and write test
-// }
-//
-//
-// #[test]
-// pub fn test_comparison() {
-//     let c = ComplexNumber::new(3.0, 6.0);
-//     let mut v = vec![ComplexNumber::new(1.0, 2.0), ComplexNumber::new(2.0, 4.0), c];
-//
-//     v.retain(|el| *el == c);
-//
-//     assert_eq!(v.len(), 1);
-// }
-//
-//
-// #[test]
-// pub fn test_sorting() {
-//     // for sorting we can use the modulus of a complex number
-//     //https://www.cuemath.com/algebra/modulus-of-complex-number/
-//     // if |a| > |b| than a > b
-//
-//     // Be careful: f64 does not implement Ord since NaN != NaN and you can't
-//     // use cmp from f64 to implement Ord for ComplexNumber
-//     // However f64 has total_cmp which produces total ordering
-//     // https://doc.rust-lang.org/beta/std/primitive.f64.html#method.total_cmp
-//
-//     let a = ComplexNumber::new(1.0, 2.0);
-//     let b = ComplexNumber::new(2.0, 4.0);
-//     let c = ComplexNumber::new(3.0, 6.0);
-//     let mut v = vec![c, b, a];
-//
-//     v.sort();
-//
-//     assert_eq!(v[0], a);
-//     assert_eq!(v[1], b);
-//     assert_eq!(v[2], c);
-// }
-//
-// #[test]
-// pub fn test_as_ref() {
-//     // implement AsRef<f64> for ComplexNumber
-//     // allow a mutable ref to real part as &f64
-//
-//     let a = ComplexNumber::new(1.0, 2.0);
-//     let r = a.as_ref();
-//
-//     assert_eq!(*r, 1.0);
-// }
-//
+#[test]
+pub fn test_try_form_f64() {
+    // write a trait allowing let complex = f64.into()
+    // and write test
+    let complex: ComplexNumber = ComplexNumber::new(1.0, 0.0);
+    let number = f64::try_from(complex).unwrap();
+    assert_eq!(number, 1.0)
+}
+
+
+#[test]
+pub fn test_comparison() {
+    let c = ComplexNumber::new(3.0, 6.0);
+    let mut v = vec![ComplexNumber::new(1.0, 2.0), ComplexNumber::new(2.0, 4.0), c];
+
+    v.retain(|el| *el == c);
+
+    assert_eq!(v.len(), 1);
+}
+
+
+#[test]
+pub fn test_sorting() {
+    // for sorting we can use the modulus of a complex number
+    //https://www.cuemath.com/algebra/modulus-of-complex-number/
+    // if |a| > |b| than a > b
+
+    // Be careful: f64 does not implement Ord since NaN != NaN and you can't
+    // use cmp from f64 to implement Ord for ComplexNumber
+    // However f64 has total_cmp which produces total ordering
+    // https://doc.rust-lang.org/beta/std/primitive.f64.html#method.total_cmp
+
+    let a = ComplexNumber::new(1.0, 2.0);
+    let b = ComplexNumber::new(2.0, 4.0);
+    let c = ComplexNumber::new(3.0, 6.0);
+    let mut v = vec![c, b, a];
+
+    v.sort();
+
+    assert_eq!(v[0], a);
+    assert_eq!(v[1], b);
+    assert_eq!(v[2], c);
+}
+
+#[test]
+pub fn test_as_ref() {
+    // implement AsRef<f64> for ComplexNumber
+    // allow a mutable ref to real part as &f64
+
+    let a = ComplexNumber::new(1.0, 2.0);
+    let r = a.as_ref();
+
+    assert_eq!(*r, 1.0);
+}
+
 // #[test]
 // pub fn test_as_mut() {
 //     // implement AsMut<f64> for ComplexNumber

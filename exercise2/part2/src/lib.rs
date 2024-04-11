@@ -1,7 +1,8 @@
 pub mod solution{
+    use std::cmp::Ordering;
     use std::fmt::{Formatter};
 
-    #[derive(Copy, Clone)]
+    #[derive(Copy, Clone, Debug)]
     pub struct ComplexNumber{
         real: f64,
         imag: f64
@@ -87,17 +88,58 @@ pub mod solution{
     //     }
     // }
 
-    impl TryInto<f64> for ComplexNumber {
+    // impl TryInto<f64> for ComplexNumber {
+    //     type Error = CustomError;
+    //
+    //     fn try_into(self) -> Result<f64, CustomError> {
+    //         if self.imag != 0.0 {
+    //             Err(CustomError{info: "Errore: Parte immaginaria non nulla".to_string() })
+    //         } else {
+    //             Ok(self.real)
+    //         }
+    //     }
+    // }
+
+    impl TryFrom<ComplexNumber> for f64{
         type Error = CustomError;
 
-        fn try_into(self) -> Result<f64, CustomError> {
-            if self.imag != 0.0 {
-                Err(CustomError{info: "Errore: Parte immaginaria non nulla".to_string() })
-            } else {
-                Ok(self.real)
+        fn try_from(value: ComplexNumber) -> Result<Self, Self::Error> {
+            if value.imag != 0.0 {
+                Err(CustomError{info: "Errore: Parte immaginaria non nulla".to_string()})
+            }
+            else {
+                Ok(value.real)
             }
         }
     }
+
+    impl PartialEq<Self> for ComplexNumber {
+        fn eq(&self, other: &Self) -> bool {
+            if self.real == other.real && self.imag == other.imag {true} else {false}
+        }
+    }
+
+    impl Eq for ComplexNumber{}
+
+    impl std::cmp::PartialOrd for ComplexNumber{
+        fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+            //Assuming |z1| = sqrt(real² + imag²)
+            let z1:f64 = (self.real.powf(2f64) + self.imag.powf(2f64)).sqrt();
+            //Assuming |z2| = sqrt(real² + imag²)
+            let z2:f64 = (other.real.powf(2f64) + other.imag.powf(2f64)).sqrt();
+
+            //if |z1| > |z2| => self > other else self < other
+            if z1.is_nan() || z2.is_nan() {None} else {Some(z1.total_cmp(&z2))}
+        }
+    }
+
+    impl std::cmp::Ord for ComplexNumber{
+        fn cmp(&self, other: &Self) -> Ordering {
+            self.partial_cmp(&other).unwrap()
+        }
+    }
+
+
 
     //Mi scrivo il mio errore:
     #[derive(Debug)]
