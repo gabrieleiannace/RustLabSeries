@@ -8,9 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf01302e-f67d-4ba2-be0c-6702b621770d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/complex_numbers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/complex_numbers.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +203,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712758428555</updated>
       <workItem from="1712758431441" duration="13611000" />
-      <workItem from="1712823738998" duration="9785000" />
+      <workItem from="1712823738998" duration="10526000" />
     </task>
     <servers />
   </component>
