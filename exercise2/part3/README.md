@@ -25,9 +25,9 @@ senza mai spostarli: quando leggo avanzo head e la casella prima occupata divent
 quando scrivo avanzo tail, occupando una nuova casella.
 Occorre stare attenti alle seguenti condizioni:
 - quando head o tail vanno oltre la lunghezza dell’array tornano a zero (è come se
-l’array fosse chiuso su se stesso in un cerchio)
+  l’array fosse chiuso su se stesso in un cerchio)
 - quando head coincide con tail il buffer può essere pieno o vuoto (all’inizio coincidono
-ed è vuoto) e quindi si deve trovare un modo di distinguere i due stati
+  ed è vuoto) e quindi si deve trovare un modo di distinguere i due stati
 
 Implementare un buffer circolare in grado di ospitare tipi generici che abbia la seguente
 interfaccia (da completare rendendola generica, è possibile aggiungere metodi se servono
@@ -56,49 +56,49 @@ nuovo contiguo.
 
 Passi per risolvere il problema:
 rendere generica la struct, indicando quali sono i tratti richiesti per T (ad esempio se
-   devo allocare un array di T ci dovrà essere un valore di default)
+devo allocare un array di T ci dovrà essere un valore di default)
 implementare i metodi generici
 scrivere i test base:
 
-   a. inserire elemento e controllare dimensione buffer
+a. inserire elemento e controllare dimensione buffer
 
-   b. inserire elemento, leggerlo e controllare che sia lo stesso
+b. inserire elemento, leggerlo e controllare che sia lo stesso
 
-   c. ripetere per n elementi e leggerli
+c. ripetere per n elementi e leggerli
 
-   d. controllare che head e tail ritornino correttamente a zero
+d. controllare che head e tail ritornino correttamente a zero
 
-   e. leggere da buffer vuoto
+e. leggere da buffer vuoto
 
-   f. scrivere su buffer pieno
+f. scrivere su buffer pieno
 
-   g. fare overwrite su buffer pieno (se non è pieno si deve comportare come write)
+g. fare overwrite su buffer pieno (se non è pieno si deve comportare come write)
 
-   h. rendere contiguo buffer non contiguo e controllare posizione di head e tail
+h. rendere contiguo buffer non contiguo e controllare posizione di head e tail
 
 Provarlo con il tipo complex realizzato nel punto precedente (opzionale, passare
-   prima ai punti successivi)
+prima ai punti successivi)
 Un buffer circolare generico può ospitare ogni tipo T, ma i tipi devono essere
-   omogenei. Che escamotage posso usare in Rust per ospitare tipi eterogenei senza
-   modificare l’implementazione del Buffer? Quali sono le limitazioni? Come varia la
-   occupazione di memoria?
+omogenei. Che escamotage posso usare in Rust per ospitare tipi eterogenei senza
+modificare l’implementazione del Buffer? Quali sono le limitazioni? Come varia la
+occupazione di memoria?
 Implementare i seguenti tratti per il buffer circolare
 
-   a. **Index** e **IndexMut**, in questo modo **buf[0]** permette di leggere e modificare
-   l’elemento in testa e così via fino a tail (notare: l’indice non è l’offset reale
-   nell’array, ma relativo ad head!)
-   Nel caso di index out of bounds deve andare in panic!
+a. **Index** e **IndexMut**, in questo modo **buf[0]** permette di leggere e modificare
+l’elemento in testa e così via fino a tail (notare: l’indice non è l’offset reale
+nell’array, ma relativo ad head!)
+Nel caso di index out of bounds deve andare in panic!
 
-   b. **Deref**: dereferenzia il buffer circolare come uno slice di T **&[T]**, con inizio e
-   fine che coincidono con head e tail. **NB:** se il buffer non è contiguo deve fallire
-   con panic!
-   Perché il tratto Deref non può chiamare internamente make_contiguos() e
-   non fallire? Attenzione ai vincoli di mutabilità
+b. **Deref**: dereferenzia il buffer circolare come uno slice di T **&[T]**, con inizio e
+fine che coincidono con head e tail. **NB:** se il buffer non è contiguo deve fallire
+con panic!
+Perché il tratto Deref non può chiamare internamente make_contiguos() e
+non fallire? Attenzione ai vincoli di mutabilità
 
-   c. **TryDeref**: si comporta come Deref, ma è più gentile: se non è contiguo
-   restituisce un errore senza andare in panic!
-   d. **DerefMut**: si comporta come Deref ma restituisce **&mut[T]**. Qui è possibile
-   fare una implementazione che eviti di fallire?
+c. **TryDeref**: si comporta come Deref, ma è più gentile: se non è contiguo
+restituisce un errore senza andare in panic!
+d. **DerefMut**: si comporta come Deref ma restituisce **&mut[T]**. Qui è possibile
+fare una implementazione che eviti di fallire?
 
 **Osservazioni generali sulla importanza del borrow checker di Rust**: i tratti come Deref
 sono molto “pericolosi” potenzialmente, perché se qualcuno legge/inserisce elementi nel

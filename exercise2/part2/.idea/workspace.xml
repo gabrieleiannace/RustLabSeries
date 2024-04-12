@@ -9,6 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cf01302e-f67d-4ba2-be0c-6702b621770d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part3/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../part3/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,46 +37,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Cargo.Test test_add.executor": "Run",
-    "Cargo.Test test_add_reference_with_reference.executor": "Run",
-    "Cargo.Test test_add_with_real.executor": "Run",
-    "Cargo.Test test_add_with_reference.executor": "Run",
-    "Cargo.Test test_as_mut.executor": "Run",
-    "Cargo.Test test_as_ref.executor": "Run",
-    "Cargo.Test test_comparison.executor": "Run",
-    "Cargo.Test test_convert_into_real.executor": "Run",
-    "Cargo.Test test_create.executor": "Run",
-    "Cargo.Test test_create_from_real.executor": "Run",
-    "Cargo.Test test_default_values.executor": "Run",
-    "Cargo.Test test_deque.executor": "Run",
-    "Cargo.Test test_enable_copy.executor": "Run",
-    "Cargo.Test test_hash_with_hash_map.executor": "Run",
-    "Cargo.Test test_inc_add.executor": "Run",
-    "Cargo.Test test_panic_when_impossible_to_convert_to_real.executor": "Run",
-    "Cargo.Test test_sorting.executor": "Run",
-    "Cargo.Test test_try_form_f64.executor": "Run",
-    "Cargo.Test test_try_into_f64.executor": "Run",
-    "Cargo.Test.executor": "Run",
-    "Cargo.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/gabri/RustroverProjects/RustLabSeries/exercise2/part2/tests",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.first.attach.projects": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Cargo.Test test_add.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_add_reference_with_reference.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_add_with_real.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_add_with_reference.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_as_mut.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_as_ref.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_comparison.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_convert_into_real.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_create.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_create_from_real.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_default_values.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_deque.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_enable_copy.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_hash_with_hash_map.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_inc_add.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_panic_when_impossible_to_convert_to_real.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_sorting.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_try_form_f64.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test_try_into_f64.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gabri/RustroverProjects/RustLabSeries/exercise2/part2/tests&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\gabri\RustroverProjects\RustLabSeries\exercise2\part2\tests" />
@@ -206,6 +208,7 @@
       <updated>1712758428555</updated>
       <workItem from="1712758431441" duration="13611000" />
       <workItem from="1712823738998" duration="10781000" />
+      <workItem from="1712916637713" duration="161000" />
     </task>
     <servers />
   </component>

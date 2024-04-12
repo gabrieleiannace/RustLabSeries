@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e0e47f4d-ac75-4115-a23e-06ae6aa28eb0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/complex_number.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_circular_buffer.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part2/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../part2/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/part3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/part3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-6c169394ce4fa59e/bin-part3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-6c169394ce4fa59e/bin-part3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-6c169394ce4fa59e/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-c9123f144dc583cb/bin-part3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-c9123f144dc583cb/bin-part3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-c9123f144dc583cb/dep-bin-part3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-c9123f144dc583cb/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-c9123f144dc583cb/output-bin-part3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-e1d4446c0690a970/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-e1d4446c0690a970/test-bin-part3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-e1d4446c0690a970/test-bin-part3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/part3.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/part3.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/part3.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/1vp8bxgd04ulb5yy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/2icgqvo1cybxc32h.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/36l724elqpcbsujy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/45zf96twutciy2bi.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/4xsriico2qot1srs.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/rqv6gr57xy0zcy6.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t-es6y35undi7fpclxfzyohela9/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-rsml5lktfzpg/s-gv5kdqy6n0-9jtu0t.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/part3.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/part3.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/part3.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/complex_number.rs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="6wmnywb8" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2f03U5DHSBdC1qwId8jXjVKuwql" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cargo.Test check_contigous.executor": "Run",
+    "Cargo.Test empty_read.executor": "Run",
+    "Cargo.Test head_and_tail_reset.executor": "Run",
+    "Cargo.Test insert_and_dimension.executor": "Run",
+    "Cargo.Test n_wirte_n_read.executor": "Run",
+    "Cargo.Test overwrite_full (1).executor": "Run",
+    "Cargo.Test overwrite_full.executor": "Run",
+    "Cargo.Test write_and_read.executor": "Run",
+    "Cargo.Test write_while_full.executor": "Run",
+    "Cargo.Test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/gabri/RustroverProjects/RustLabSeries/exercise2/part3/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.first.attach.projects": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gabri\RustroverProjects\RustLabSeries\exercise2\part3\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cargo.Test insert_and_dimension">
+    <configuration name="Test empty_read (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer empty_read -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test head_and_tail_reset" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer head_and_tail_reset -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test insert_and_dimension" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer insert_and_dimension -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test n_wirte_n_read" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer n_wirte_n_read -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test write_and_read" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer write_and_read -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="test --package part3 --lib tests" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Test insert_and_dimension" />
+        <item itemvalue="Cargo.Test write_and_read" />
+        <item itemvalue="Cargo.Test n_wirte_n_read" />
+        <item itemvalue="Cargo.Test head_and_tail_reset" />
+        <item itemvalue="Cargo.Test empty_read (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0e47f4d-ac75-4115-a23e-06ae6aa28eb0" name="Changes" comment="" />
+      <created>1712924181121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712924181121</updated>
+      <workItem from="1712924184168" duration="9785000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
