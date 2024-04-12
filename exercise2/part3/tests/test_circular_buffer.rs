@@ -125,3 +125,8 @@ fn check_contigous(){
     println!("CBUF{:?}", c_buff);
     assert_eq!(cmp_buff, c_buff);
 }
+
+// enum Tipi{
+//     I32(i32),
+//     complex_number(ComplexNumber),
+// }

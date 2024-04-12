@@ -56,10 +56,10 @@ impl<T: Default + Copy > CircularBuffer<T> {
         //Se non è pieno faccio una write normale
         if self.size != self.vec.len() {let _ = self.write(item);}
         else{
-            if self.tail == 0 {self.tail = self.vec.len() - 1}
-            else {self.tail = self.tail - 1}
-            self.size -= 1;
-            let _ = self.write(item);
+            //Mi brucio il valore più vecchio
+            self.vec[self.tail] = *item;
+            self.tail = (self.tail+1)%self.vec.len();
+            self.head = (self.head+1)%self.vec.len();
         }
     }
 
@@ -94,3 +94,6 @@ impl<T: PartialEq + Default> PartialEq for CircularBuffer<T> {
         self.vec.eq(&other.vec) && self.head == other.head && self.tail == other.tail && self.size == other.size
     }
 }
+impl<T> std::cmp::Eq for CircularBuffer<T> where T: Default + Eq {  }
+
+
