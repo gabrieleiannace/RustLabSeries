@@ -1,6 +1,7 @@
 pub mod complex_number;
 
 use std::fmt::Error;
+use std::ops::{Deref, DerefMut, Index, IndexMut};
 
 #[derive(Debug)]
 pub struct CircularBuffer<T> where T: Default{
@@ -42,7 +43,7 @@ impl<T: Default + Copy > CircularBuffer<T> {
     }
 
     pub fn clear(&mut self){
-        self.vec.clear();
+        self.vec = vec![T::default(); self.vec.len()];
         self.size = 0;
         self.head = 0;
         self.tail = 0;
@@ -96,4 +97,43 @@ impl<T: PartialEq + Default> PartialEq for CircularBuffer<T> {
 }
 impl<T> std::cmp::Eq for CircularBuffer<T> where T: Default + Eq {  }
 
+impl<T: Default + Copy> Index<usize> for CircularBuffer<T>{
+    type Output = T;
+
+    fn index(&self, index: usize) -> &Self::Output {
+        if index < self.vec.len() {&self.vec[index]}
+        else {panic!("Index out of bound")}
+    }
+}
+
+impl<T: Default + Copy> IndexMut<usize> for CircularBuffer<T>{
+    fn index_mut(&mut self, index: usize) -> &mut Self::Output {
+        if index < self.vec.len() {&mut self.vec[index]}
+        else { panic!("Index out of bound") }
+    }
+}
+
+impl<T: Default + Copy> Deref for CircularBuffer<T>{
+    type Target = [T];
+
+    fn deref(&self) -> &Self::Target {
+        if self.tail < self.head {panic!("Buffer non contiguo!")}
+        else{
+            if self.size != 0{
+                if self.tail == 0 { &self.vec[self.head..self.vec.len()] }
+                else { &self.vec[self.head..self.tail] }
+            }
+            else{ &self.vec[0..0] }
+        }
+    }
+}
+
+impl<T: Default + Copy> DerefMut for CircularBuffer<T>{
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        if self.tail < self.head {
+            self.make_contiguos();
+        }
+        &mut self.vec[self.head..self.tail]
+    }
+}
 

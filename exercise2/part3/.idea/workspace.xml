@@ -10,56 +10,6 @@
     <list default="true" id="e0e47f4d-ac75-4115-a23e-06ae6aa28eb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/deps/libpart3-34036a905a104d29.rlib" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/libpart3-34036a905a104d29.rlib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/deps/libpart3-34036a905a104d29.rmeta" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/libpart3-34036a905a104d29.rmeta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/deps/test_circular_buffer-a4a889a1a77d7212.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/test_circular_buffer-a4a889a1a77d7212.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/deps/test_circular_buffer-a4a889a1a77d7212.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/deps/test_circular_buffer-a4a889a1a77d7212.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/1567js54ivvrur4k.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/1wd2r6xd4tz2xxxm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/35bl7fvc10rc8uq9.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/4976pne70q23fvj7.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/4bkwnuhpqfnrhwn7.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/50tyfylt4c9w51k6.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/5d8epzmzxrltybx3.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/5g7deckvvbs3i3d6.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/dep-graph.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/query-cache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv-e8886yree7zxm83tapvxlctqp/work-products.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/part3-2s211ndclwan2/s-gv6n7ugynb-2h1uqv.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/14py8o1ol6wr77bs.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/193c7xxm6hecd34k.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/1ffq35vtrxbl6s6g.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/1xap20suy55iluj7.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/1ycbn0oryvwp7e57.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/1yfdal03sv7crpcp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/2048d8cvagl8bb5t.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/2554mz37la5xfk90.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/27a8swh4rovmwlk0.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/2bfvm90iuc8i03rx.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/2hsthx84bs2n0kx8.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/2i8sxbs3ew9khy6j.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/2kw6q3ymdgfqay8x.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/39ul025j5mvhcp61.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/3daj776vnlkuxu1d.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/3fxjemiht7opa5zb.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/3rrkpvllwjaq8ytd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/3u01u0kbl8x6ckbn.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/480lvnsbqilvvjc.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/48modk911kknzrl4.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/4hpxbkqa6c78hc9d.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/4k48tki6gdaqtbcn.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/4nsngecyox1mabm3.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/4qnwwbu2uiq4wksu.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/50kfax5lrw0a30f0.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/55k8gibt04m7e2n9.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/56yqm3mzjcrjmmh8.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/9ebmywk6smrxul4.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/dep-graph.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/igm8om1edx50qpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/oe1vvmmn38ow0v6.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/query-cache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh-dk3p8wyo31yse12cbd357abu5/work-products.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv6n9kngi9-6in9nh.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_circular_buffer.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_circular_buffer.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,9 +37,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2f03U5DHSBdC1qwId8jXjVKuwql" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -98,6 +48,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Cargo.Test check_contigous.executor": "Run",
+    "Cargo.Test check_deref (1).executor": "Run",
+    "Cargo.Test check_deref.executor": "Run",
+    "Cargo.Test check_enum.executor": "Run",
+    "Cargo.Test check_index.executor": "Run",
+    "Cargo.Test check_make_contigous.executor": "Run",
+    "Cargo.Test check_mut_index.executor": "Run",
+    "Cargo.Test check_try_deref.executor": "Run",
     "Cargo.Test empty_read (1).executor": "Run",
     "Cargo.Test empty_read.executor": "Run",
     "Cargo.Test head_and_tail_reset.executor": "Run",
@@ -130,9 +87,9 @@
       <recent name="C:\Users\gabri\RustroverProjects\RustLabSeries\exercise2\part3\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Cargo.Test overwrite_full">
-    <configuration name="Test head_and_tail_reset" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package part3 --test test_circular_buffer head_and_tail_reset -- --exact" />
+  <component name="RunManager" selected="Cargo.Test check_deref (1)">
+    <configuration name="Test check_contigous" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer check_contigous -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -148,8 +105,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test insert_and_dimension" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package part3 --test test_circular_buffer insert_and_dimension -- --exact" />
+    <configuration name="Test check_deref (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer check_deref -- --ignored --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -165,8 +122,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test n_wirte_n_read" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package part3 --test test_circular_buffer n_wirte_n_read -- --exact" />
+    <configuration name="Test check_deref" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer check_deref -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -182,8 +139,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test overwrite_full" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package part3 --test test_circular_buffer overwrite_full -- --exact" />
+    <configuration name="Test check_make_contigous" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer check_make_contigous -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -199,8 +156,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test write_and_read" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package part3 --test test_circular_buffer write_and_read -- --exact" />
+    <configuration name="Test check_try_deref" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer check_try_deref -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -235,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cargo.Test overwrite_full" />
-        <item itemvalue="Cargo.Test insert_and_dimension" />
-        <item itemvalue="Cargo.Test write_and_read" />
-        <item itemvalue="Cargo.Test n_wirte_n_read" />
-        <item itemvalue="Cargo.Test head_and_tail_reset" />
+        <item itemvalue="Cargo.Test check_deref (1)" />
+        <item itemvalue="Cargo.Test check_try_deref" />
+        <item itemvalue="Cargo.Test check_make_contigous" />
+        <item itemvalue="Cargo.Test check_contigous" />
+        <item itemvalue="Cargo.Test check_deref" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +211,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712924181121</updated>
-      <workItem from="1712924184168" duration="13702000" />
+      <workItem from="1712924184168" duration="14165000" />
+      <workItem from="1713001023116" duration="10763000" />
     </task>
     <servers />
   </component>

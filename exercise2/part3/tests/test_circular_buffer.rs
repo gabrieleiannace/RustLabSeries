@@ -1,3 +1,4 @@
+use std::ops::Deref;
 use part3::CircularBuffer;
 use part3::complex_number::solution::ComplexNumber;
 
@@ -126,7 +127,119 @@ fn check_contigous(){
     assert_eq!(cmp_buff, c_buff);
 }
 
-// enum Tipi{
-//     I32(i32),
-//     complex_number(ComplexNumber),
-// }
+
+#[derive(Debug)]
+enum Tipi{
+    I32(i32),
+    ComplexNumber(ComplexNumber)
+}
+
+impl Default for Tipi{
+    fn default() -> Self {
+        Tipi::I32(i32::default())
+    }
+}
+
+impl Clone for Tipi {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+
+impl Copy for Tipi{ }
+
+impl PartialEq for Tipi{
+    fn eq(&self, other: &Self) -> bool {
+        self == other
+    }
+}
+impl Eq for Tipi {  }
+
+#[test]
+#[ignore]
+fn check_enum(){
+    let num = Tipi::I32(2);
+    let c_num = Tipi::ComplexNumber(ComplexNumber::new(1.0, 2.0));
+    let mut buffer:CircularBuffer<Tipi> = CircularBuffer::new(2);
+
+    let _ = buffer.write(&num);
+    let _ = buffer.write(&c_num);
+
+    println!("{:?}", buffer);
+}
+
+#[test]
+#[ignore]
+fn check_index(){
+    let num = Tipi::I32(2);
+    let c_num = Tipi::ComplexNumber(ComplexNumber::new(1.0, 2.0));
+    let mut buffer:CircularBuffer<Tipi> = CircularBuffer::new(2);
+
+    let _ = buffer.write(&num);
+    let _ = buffer.write(&c_num);
+
+    println!("{:?}", buffer[1]);
+    println!("{:?}", c_num);
+}
+
+#[test]
+#[ignore]
+fn check_mut_index(){
+    let num = Tipi::I32(2);
+    let c_num = Tipi::ComplexNumber(ComplexNumber::new(1.0, 2.0));
+    let mut buffer:CircularBuffer<Tipi> = CircularBuffer::new(2);
+
+    let _ = buffer.write(&num);
+    let _ = buffer.write(&c_num);
+
+    println!("{:?}", buffer[0]);
+    buffer[0] = Tipi::I32(100);
+    println!("{:?}", buffer[0]);
+}
+
+#[test]
+#[ignore]
+fn check_deref(){
+    let mut buffer:CircularBuffer<i32> = CircularBuffer::new(3);
+
+    //Non contiguo
+    let _ = buffer.write(&1);
+    let _ = buffer.write(&2);
+    let _ = buffer.write(&3);
+    //Head 0 - Tail 0 = Buffer pieno
+    let _ = buffer.read();
+    let _ = buffer.read();
+    //Head 2 - Tail 0
+    let _ = buffer.write(&4);
+    //Ora sono nella situazione [4, -, 3] Head 2 e Tail 1
+
+    //let reference = &*buffer;
+    //println!("{:?}", reference);
+
+    //Contiguo
+    buffer.clear();
+    let _ = buffer.write(&1);
+    let _ = buffer.write(&2);
+    let reference = &*buffer;
+    println!("{:?}", reference);
+
+
+}
+
+#[test]
+fn check_try_deref(){
+    let mut buffer:CircularBuffer<i32> = CircularBuffer::new(3);
+    //Non contiguo
+    let _ = buffer.write(&1);
+    let _ = buffer.write(&2);
+    let _ = buffer.write(&3);
+    //Head 0 - Tail 0 = Buffer pieno
+    let _ = buffer.read();
+    let _ = buffer.read();
+    //Head 2 - Tail 0
+    let _ = buffer.write(&4);
+    //Ora sono nella situazione [4, -, 3] Head 2 e Tail 1
+
+    let mut reference = &mut *buffer;
+    println!("{:?}", reference);
+}
