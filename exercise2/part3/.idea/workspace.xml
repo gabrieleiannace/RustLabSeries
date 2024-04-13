@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0e47f4d-ac75-4115-a23e-06ae6aa28eb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_circular_buffer.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_circular_buffer.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +56,7 @@
     "Cargo.Test check_try_deref.executor": "Run",
     "Cargo.Test empty_read (1).executor": "Run",
     "Cargo.Test empty_read.executor": "Run",
+    "Cargo.Test final_conclusion.executor": "Run",
     "Cargo.Test head_and_tail_reset.executor": "Run",
     "Cargo.Test insert_and_dimension.executor": "Run",
     "Cargo.Test n_wirte_n_read.executor": "Run",
@@ -87,7 +87,7 @@
       <recent name="C:\Users\gabri\RustroverProjects\RustLabSeries\exercise2\part3\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Cargo.Test check_deref (1)">
+  <component name="RunManager" selected="Cargo.Test final_conclusion">
     <configuration name="Test check_contigous" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package part3 --test test_circular_buffer check_contigous -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -107,23 +107,6 @@
     </configuration>
     <configuration name="Test check_deref (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package part3 --test test_circular_buffer check_deref -- --ignored --exact" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <option name="emulateTerminal" value="true" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test check_deref" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package part3 --test test_circular_buffer check_deref -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -173,6 +156,23 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test final_conclusion" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer final_conclusion -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="test --package part3 --lib tests" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -192,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test final_conclusion" />
         <item itemvalue="Cargo.Test check_deref (1)" />
         <item itemvalue="Cargo.Test check_try_deref" />
         <item itemvalue="Cargo.Test check_make_contigous" />
         <item itemvalue="Cargo.Test check_contigous" />
-        <item itemvalue="Cargo.Test check_deref" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +212,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712924181121</updated>
       <workItem from="1712924184168" duration="14165000" />
-      <workItem from="1713001023116" duration="10763000" />
+      <workItem from="1713001023116" duration="12783000" />
     </task>
     <servers />
   </component>

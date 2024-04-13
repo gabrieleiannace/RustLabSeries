@@ -227,6 +227,7 @@ fn check_deref(){
 }
 
 #[test]
+#[ignore]
 fn check_try_deref(){
     let mut buffer:CircularBuffer<i32> = CircularBuffer::new(3);
     //Non contiguo
@@ -240,6 +241,21 @@ fn check_try_deref(){
     let _ = buffer.write(&4);
     //Ora sono nella situazione [4, -, 3] Head 2 e Tail 1
 
-    let mut reference = &mut *buffer;
+    let reference = &mut *buffer;
+    println!("{:?}", reference);
+}
+
+
+#[test]
+#[ignore]
+fn final_conclusion(){
+    let mut buffer:CircularBuffer<i32> = CircularBuffer::new(4);
+    let _ = buffer.write(&1);
+    let _ = buffer.write(&2);
+    let _ = buffer.write(&3);
+    let _ = buffer.write(&4);
+    let reference = &mut *buffer;
+    buffer[2] = 4;
+    //Does not work, BORROW CHECKER!!
     println!("{:?}", reference);
 }
