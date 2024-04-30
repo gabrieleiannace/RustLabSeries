@@ -9,7 +9,46 @@
   <component name="ChangeListManager">
     <list default="true" id="e0e47f4d-ac75-4115-a23e-06ae6aa28eb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_circular_buffer.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_circular_buffer.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/part3-a4a889a1a77d7212/output-test-integration-test-test_circular_buffer" beforeDir="false" afterPath="$PROJECT_DIR$/target/debug/.fingerprint/part3-a4a889a1a77d7212/output-test-integration-test-test_circular_buffer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/14py8o1ol6wr77bs.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/189fcfceqn0e9ih3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/193c7xxm6hecd34k.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/1ffq35vtrxbl6s6g.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/1xap20suy55iluj7.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/1ycbn0oryvwp7e57.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/1yfdal03sv7crpcp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/2048d8cvagl8bb5t.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/2554mz37la5xfk90.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/27a8swh4rovmwlk0.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/2bfvm90iuc8i03rx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/2hsthx84bs2n0kx8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/2i8sxbs3ew9khy6j.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/2kw6q3ymdgfqay8x.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/39ul025j5mvhcp61.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/3daj776vnlkuxu1d.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/3f788430lfiychc4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/3fxjemiht7opa5zb.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/3rrkpvllwjaq8ytd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/3u01u0kbl8x6ckbn.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/480lvnsbqilvvjc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/48modk911kknzrl4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/4hpxbkqa6c78hc9d.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/4k48tki6gdaqtbcn.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/4nsngecyox1mabm3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/4qnwwbu2uiq4wksu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/50kfax5lrw0a30f0.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/55k8gibt04m7e2n9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/56yqm3mzjcrjmmh8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/9ebmywk6smrxul4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/hhz8mhynwl2q5o2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/igm8om1edx50qpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/oe1vvmmn38ow0v6.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/test_circular_buffer-1gwkyafnb0i6a/s-gv7ohnhck8-1atxfic.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +65,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "gabrieleiannace"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/gabrieleiannace/RustLabSeries.git",
+    "accountId": "65172fbd-83d2-4bb9-acca-1d42fce0cc3d"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/complex_number.rs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/tests/test_circular_buffer.rs" root0="FORCE_HIGHLIGHTING" />
@@ -44,52 +95,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Test check_contigous.executor": "Run",
-    "Cargo.Test check_deref (1).executor": "Run",
-    "Cargo.Test check_deref.executor": "Run",
-    "Cargo.Test check_enum.executor": "Run",
-    "Cargo.Test check_index.executor": "Run",
-    "Cargo.Test check_make_contigous.executor": "Run",
-    "Cargo.Test check_mut_index.executor": "Run",
-    "Cargo.Test check_try_deref.executor": "Run",
-    "Cargo.Test empty_read (1).executor": "Run",
-    "Cargo.Test empty_read.executor": "Run",
-    "Cargo.Test final_conclusion.executor": "Run",
-    "Cargo.Test head_and_tail_reset.executor": "Run",
-    "Cargo.Test insert_and_dimension.executor": "Run",
-    "Cargo.Test n_wirte_n_read.executor": "Run",
-    "Cargo.Test overwrite_full (1).executor": "Run",
-    "Cargo.Test overwrite_full.executor": "Run",
-    "Cargo.Test write_and_read.executor": "Run",
-    "Cargo.Test write_while_full (1).executor": "Run",
-    "Cargo.Test write_while_full.executor": "Run",
-    "Cargo.Test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/gabri/RustroverProjects/RustLabSeries/exercise2/part3/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.first.attach.projects": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Test check_contigous.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test check_deref (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test check_deref.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test check_enum.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test check_index.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test check_make_contigous.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test check_mut_index.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test check_try_deref.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test empty_read (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test empty_read.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test final_conclusion.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test head_and_tail_reset.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test insert_and_dimension.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test n_wirte_n_read.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test overwrite_full (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test overwrite_full.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test write_and_read.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test write_while_full (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test write_while_full.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gabri/RustroverProjects/Study_playground&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\gabri\RustroverProjects\RustLabSeries\exercise2\part3\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Cargo.Test final_conclusion">
-    <configuration name="Test check_contigous" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package part3 --test test_circular_buffer check_contigous -- --exact" />
+  <component name="RunManager" selected="Cargo.Test check_index">
+    <configuration name="Test check_deref (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer check_deref -- --ignored --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -105,8 +156,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test check_deref (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package part3 --test test_circular_buffer check_deref -- --ignored --exact" />
+    <configuration name="Test check_index" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package part3 --test test_circular_buffer check_index -- --ignored --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -192,11 +243,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test check_index" />
         <item itemvalue="Cargo.Test final_conclusion" />
         <item itemvalue="Cargo.Test check_deref (1)" />
         <item itemvalue="Cargo.Test check_try_deref" />
         <item itemvalue="Cargo.Test check_make_contigous" />
-        <item itemvalue="Cargo.Test check_contigous" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +263,12 @@
       <option name="presentableId" value="Default" />
       <updated>1712924181121</updated>
       <workItem from="1712924184168" duration="14165000" />
-      <workItem from="1713001023116" duration="12783000" />
+      <workItem from="1713001023116" duration="13098000" />
+      <workItem from="1713015967376" duration="104000" />
+      <workItem from="1713018687830" duration="38000" />
+      <workItem from="1713021325696" duration="39000" />
+      <workItem from="1713960235265" duration="13000" />
+      <workItem from="1714141246696" duration="40000" />
     </task>
     <servers />
   </component>
