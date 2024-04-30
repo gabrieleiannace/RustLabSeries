@@ -4,54 +4,54 @@
 // missing lifetimes: the result string slices depend only from one input parameter, which one?
 
 // suggestion: write a function find_sub(&str, &str) -> Option<(usize, &str)> that finds the first subsequence in a string, you can use it in all the following functions
-fn find_sub<'a, 'b>(string: &'a str, sub_seq: &'b str) -> Option<(usize, &'a str)>{
-    let symbol:char = sub_seq.chars().nth(0).unwrap();
-    let min:u32 = sub_seq.chars().nth(1).unwrap().to_digit(10).unwrap();
-    let max:u32 = sub_seq.chars().nth(3).unwrap().to_digit(10).unwrap();
+fn find_sub<'a, 'b>(string: &'a str, sub_seq: &'b str) -> Option<(usize, &'a str)> {
+    let symbol = sub_seq.chars().nth(0)?;
+    let min = sub_seq[1..2].parse::<usize>().ok()?;
+    let max = sub_seq[3..4].parse::<usize>().ok()?;
 
-    let mut counter:usize = 0;
-    let mut indice:usize = 0;
-    for (index, char) in string.chars().enumerate(){
-        indice += 1;
+    let mut counter = 0;
+    let mut start_index = None;
+    let mut result = None;
+
+    for (index, char) in string.chars().enumerate() {
         if char == symbol {
             counter += 1;
-            continue;
-        }
-        else{
-            if counter >= min as usize && counter <= max as usize{
-                return Some((index - counter, &string[index - counter..index]));
+        } else {
+            if min <= counter && counter <= max {
+                result = Some((start_index.unwrap(), &string[start_index.unwrap()..index]));
+                break;
             }
             counter = 0;
+            start_index = Some(index + 1);
         }
     }
-    if counter >= min as usize && counter <= max as usize{
-        return Some((indice - counter, &string[indice - counter..indice]));
+
+    if min <= counter && counter <= max {
+        result = Some((start_index.unwrap(), &string[start_index.unwrap()..]));
     }
-    None
+
+    result
 }
 
 fn subsequences1<'a, 'b>(s: &'a str, seq: &'b str) -> Vec<(usize, &'a str)> {
-    let mut vec:Vec<(usize, &str)> = Vec::new();
+    let sub_seq: Vec<&str> = seq.split(',').collect();
 
-    let sub_seq: Vec<_> = seq.split(",").collect();
-    for sub in sub_seq{
-        match find_sub(s, sub){
-            None => {}
-            Some(t) => {vec.push(t)}
-        }
-    }
-    vec
+    sub_seq
+        .iter()
+        .filter_map(|&sub| find_sub(s, sub))
+        .collect()
 }
+
 #[test]
 pub fn demo1() {
     let a = "AACGGTAACC".to_string();
     let seq = "A1-1,C2-4";
 
-
     for (off, sub) in subsequences1(&a, seq) {
         println!("Found subsequence at position {}: {}", off, sub);
     }
 }
+
 
 // // Now we want to find different subsequences at the same time, seq is a vector of string slices with many subsequence to search
 // // For each subsequence find all the matches and to the results (there may be overlaps, ignore them), but in this way you can reuse the previous solution
