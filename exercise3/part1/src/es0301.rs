@@ -42,10 +42,10 @@ fn subsequences1<'a, 'b>(s: &'a str, seq: &'b str) -> Vec<(usize, &'a str)> {
         .collect()
 }
 
-#[test]
+
 pub fn demo1() {
     let a = "AACGGTAACC".to_string();
-    let seq = "A1-1,C2-4";
+    let seq = "A1-1,C2-4";                              //Sequenza da spacchettare in sottosequenze
 
     for (off, sub) in subsequences1(&a, seq) {
         println!("Found subsequence at position {}: {}", off, sub);
@@ -53,23 +53,35 @@ pub fn demo1() {
 }
 
 
-// // Now we want to find different subsequences at the same time, seq is a vector of string slices with many subsequence to search
-// // For each subsequence find all the matches and to the results (there may be overlaps, ignore them), but in this way you can reuse the previous solution
-// // The result will contain: the start position in s, the found subsequence as string slice and the mached subsequence in seq
-// // Now the string slices in the rsult depend from two input parameters, which ones?
-// fn subsequences2(s: &str, seq: &[&str]) -> Vec<(usize, &str, &str)> {
-//     unimplemented!()
-// }
-//
-// pub fn demo2() {
-//     let a = "AACGGTAACC".to_string();
-//     let seqs = ["A1-1,C2-4", "G1-1,T2-4"];
-//
-//     for (off, matched, sub) in subsequences2(&a, &seqs) {
-//         println!("Found subsequence {} at position {}: {}", matched, off, sub);
-//     }
-// }
-//
+// Now we want to find different subsequences at the same time, seq is a vector of string slices with many subsequence to search
+// For each subsequence find all the matches and to the results (there may be overlaps, ignore them), but in this way you can reuse the previous solution
+// The result will contain: the start position in s, the found subsequence as string slice and the mached subsequence in seq
+// Now the string slices in the result depend from two input parameters, which ones?
+fn subsequences2<'a, 'b>(s: &'a str, seq: &'b[&str]) -> Vec<(usize, &'a str, &'b str)> {
+    let mut results = Vec::new();
+
+    for &sub in seq {
+        let sub_results = subsequences1(s, sub);
+
+        for (off, sub_slice) in sub_results {
+            results.push((off, sub_slice, sub));
+        }
+    }
+
+    results
+
+}
+
+#[test]
+pub fn demo2() {
+    let a = "AACGGTAACC".to_string();
+    let seqs = ["A1-1,C2-4", "G1-1,T2-4"];
+
+    for (off, matched, sub) in subsequences2(&a, &seqs) {
+        println!("Found subsequence {} at position {}: {}", matched, off, sub);
+    }
+}
+
 // // Now we want to do some DNA editing! Therefore we receive a mutable string and we'd like to return a vector of mutable string slices
 // // Follow this steps:
 // // 1. adjust the lifetimes without any implementation yet: does it compile?
