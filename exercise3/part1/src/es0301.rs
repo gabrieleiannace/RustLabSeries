@@ -4,84 +4,123 @@
 // missing lifetimes: the result string slices depend only from one input parameter, which one?
 
 // suggestion: write a function find_sub(&str, &str) -> Option<(usize, &str)> that finds the first subsequence in a string, you can use it in all the following functions
-fn find_sub<'a, 'b>(string: &'a str, sub_seq: &'b str) -> Option<(usize, &'a str)> {
-    let symbol = sub_seq.chars().nth(0)?;
-    let min = sub_seq[1..2].parse::<usize>().ok()?;
-    let max = sub_seq[3..4].parse::<usize>().ok()?;
 
-    let mut counter = 0;
-    let mut start_index = None;
-    let mut result = None;
+fn find_sub<'a, 'b>(string: &'a str, sub: &'b str) -> Option<(usize, &'a str)> {
+    let index = string.find(sub)?;          //Così facendo ritorna None se fallisce
+    Some((index, &string[index..index+sub.len()]))
+}
 
-    for (index, char) in string.chars().enumerate() {
-        if char == symbol {
-            counter += 1;
-        } else {
-            if min <= counter && counter <= max {
-                result = Some((start_index.unwrap(), &string[start_index.unwrap()..index]));
-                break;
-            }
-            counter = 0;
-            start_index = Some(index + 1);
+#[derive(Debug)]
+struct Sequence{
+    symbol: char,
+    min: u32,
+    max: u32
+}
+
+impl Sequence{
+    pub fn new(symbol: char, min: u32, max: u32) -> Self{
+        Self{symbol, min, max}
+    }
+
+    pub fn from_string(string: &str) -> Self{
+        Self{
+            symbol: string.chars().nth(0).unwrap(),
+            min: string.chars().nth(1).unwrap().to_digit(10).unwrap(),
+            max: string.chars().nth(3).unwrap().to_digit(10).unwrap()
         }
     }
 
-    if min <= counter && counter <= max {
-        result = Some((start_index.unwrap(), &string[start_index.unwrap()..]));
+    pub fn get_variants(&self) -> Vec<String> {
+        let mut variants_vec: Vec<String> = Vec::new();
+
+        for i in self.min..=self.max {
+            let mut str2insert = String::new();
+            for _ in 0..i {
+                str2insert.push_str(self.symbol.to_string().as_str());
+            }
+            variants_vec.push(str2insert);
+        }
+
+        variants_vec
+    }
+}
+
+pub fn get_permutation(v: &Vec<String>, variants: &Vec<String>) -> Vec<String> {
+    let mut result_vec: Vec<String> = Vec::new();
+
+    for element in v {
+        for var in variants{
+            let mut string = String::new();
+            string.push_str(element.as_str());
+            string.push_str(var.as_str());
+            result_vec.push(string)
+        }
     }
 
-    result
+    result_vec
 }
 
 fn subsequences1<'a, 'b>(s: &'a str, seq: &'b str) -> Vec<(usize, &'a str)> {
-    let sub_seq: Vec<&str> = seq.split(',').collect();
+    let mut vec: Vec<(usize, &str)> = Vec::new();
 
-    sub_seq
-        .iter()
-        .filter_map(|&sub| find_sub(s, sub))
-        .collect()
+    let mut sequence_vec: Vec<Sequence> = Vec::new();               //Vector di Sequence
+
+    let seq_vec: Vec<&str> = seq.split(",").collect();
+    for sequence in seq_vec {
+        let seq2add = Sequence::from_string(sequence);
+        sequence_vec.push(seq2add);
+    }
+
+    let mut reference_vector: Vec<String> = sequence_vec.iter().nth(0).unwrap().get_variants();
+    for i in 1..sequence_vec.len() {
+        reference_vector = get_permutation(&reference_vector, &sequence_vec.iter().nth(i).unwrap().get_variants());
+    }
+
+    // println!("{:?}", reference_vector);
+
+    for seq2search in reference_vector{
+        match find_sub(s, seq2search.as_str()){
+            None => {}
+            Some(value) => {vec.push(value)}
+        }
+    }
+
+    for i in 0..vec.len()-1{
+        if vec.iter().nth(i).unwrap().0 <= vec.iter().nth(i+1).unwrap().0 + vec.iter().nth(i+1).unwrap().1.len() {
+            vec.remove(i);
+        }
+    }
+
+    vec
 }
 
-
+#[test]
 pub fn demo1() {
     let a = "AACGGTAACC".to_string();
-    let seq = "A1-1,C2-4";                              //Sequenza da spacchettare in sottosequenze
+    let seq = "G1-2,T1-1";
 
     for (off, sub) in subsequences1(&a, seq) {
         println!("Found subsequence at position {}: {}", off, sub);
     }
 }
 
-
-// Now we want to find different subsequences at the same time, seq is a vector of string slices with many subsequence to search
-// For each subsequence find all the matches and to the results (there may be overlaps, ignore them), but in this way you can reuse the previous solution
-// The result will contain: the start position in s, the found subsequence as string slice and the mached subsequence in seq
-// Now the string slices in the result depend from two input parameters, which ones?
-fn subsequences2<'a, 'b>(s: &'a str, seq: &'b[&str]) -> Vec<(usize, &'a str, &'b str)> {
-    let mut results = Vec::new();
-
-    for &sub in seq {
-        let sub_results = subsequences1(s, sub);
-
-        for (off, sub_slice) in sub_results {
-            results.push((off, sub_slice, sub));
-        }
-    }
-
-    results
-
-}
-
-#[test]
-pub fn demo2() {
-    let a = "AACGGTAACC".to_string();
-    let seqs = ["A1-1,C2-4", "G1-1,T2-4"];
-
-    for (off, matched, sub) in subsequences2(&a, &seqs) {
-        println!("Found subsequence {} at position {}: {}", matched, off, sub);
-    }
-}
-
+// // Now we want to find different subsequences at the same time, seq is a vector of string slices with many subsequence to search
+// // For each subsequence find all the matches and to the results (there may be overlaps, ignore them), but in this way you can reuse the previous solution
+// // The result will contain: the start position in s, the found subsequence as string slice and the mached subsequence in seq
+// // Now the string slices in the rsult depend from two input parameters, which ones?
+// fn subsequences2(s: &str, seq: &[&str]) -> Vec<(usize, &str, &str)> {
+//     unimplemented!()
+// }
+//
+// pub fn demo2() {
+//     let a = "AACGGTAACC".to_string();
+//     let seqs = ["A1-1,C2-4", "G1-1,T2-4"];
+//
+//     for (off, matched, sub) in subsequences2(&a, &seqs) {
+//         println!("Found subsequence {} at position {}: {}", matched, off, sub);
+//     }
+// }
+//
 // // Now we want to do some DNA editing! Therefore we receive a mutable string and we'd like to return a vector of mutable string slices
 // // Follow this steps:
 // // 1. adjust the lifetimes without any implementation yet: does it compile?
