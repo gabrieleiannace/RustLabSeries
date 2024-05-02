@@ -130,19 +130,23 @@ pub fn demo2() {
     }
 }
 
-// // Now we want to do some DNA editing! Therefore we receive a mutable string and we'd like to return a vector of mutable string slices
-// // Follow this steps:
-// // 1. adjust the lifetimes without any implementation yet: does it compile?
-// // 2. try to implement the function: does it compile?
-// // 3. if it doesn't compile, try to understand why from the compiler errors and draw all the necessary lifetimes
-// // 4. Spoiler: basically it's not possibile to return more then one mutable reference to the same data
-// // 5. Try this workaround: return a vector of indexes (first solution) and let the caller extract the mutable references
-// // 7. (later in the course you will learn about smart pointers, which can be used to solve this kind of problems in a more elegant way)
-// fn subsequences3(s: &mut str, seq: &str) -> Vec<(usize, &mut str)> {
+// Now we want to do some DNA editing! Therefore we receive a mutable string and we'd like to return a vector of mutable string slices
+// Follow this steps:
+// 1. adjust the lifetimes without any implementation yet: does it compile?              |              YES
+// 2. try to implement the function: does it compile?                                    |              NO
+// 3. if it doesn't compile, try to understand why from the compiler errors and draw all the necessary lifetimes
+// 4. Spoiler: basically it's not possibile to return more then one mutable reference to the same data
+// 5. Try this workaround: return a vector of indexes (first solution) and let the caller extract the mutable references
+// 7. (later in the course you will learn about smart pointers, which can be used to solve this kind of problems in a more elegant way)
+
+// fn subsequences3<'a, 'b>(s: &'a mut str, seq: &'b str) ->Vec<(usize, &'a mut str)> {
 //     let mut v = Vec::new();
+//     v = subsequences1(s, seq);
+//     v.iter().map(|mut e| (e.0, e.1.as_mut()));
 //     v
 // }
 //
+// #[test]
 // pub fn demo3() {
 //     let mut a = "AACGGTAACC".to_string();
 //     let seq = "A1-1,C2-4";
@@ -151,24 +155,60 @@ pub fn demo2() {
 //         println!("Found subsequence at position {}: {}", off, sub);
 //     }
 // }
-//
-// // DNA strings may be very long and we can get a lot of matches.
-// // Therefore we want to process a subsequence as soon as we find it, without storing it in a vector
-// // A solution is to pass a closure to the function, which will be called for each match
-// // do you need to put lifetime annotations in the closure? why?
-// fn subsequence4(s: &str, seq: &str /* add your closure here */) {
-//     unimplemented!()
-// }
-//
-// pub fn demo4() {
-//     let a = "AACGGTAACC".to_string();
-//     let seq = "A1-1,C2-4";
-//
-//     subsequence4(&a, seq, |pos, sub| {
-//         println!("Found subsequence at position {}: {}", pos, sub);
-//     });
-// }
-//
+
+// DNA strings may be very long and we can get a lot of matches.
+// Therefore we want to process a subsequence as soon as we find it, without storing it in a vector
+// A solution is to pass a closure to the function, which will be called for each match
+// do you need to put lifetime annotations in the closure? why?
+fn subsequence4<F>(s: &str, seq: &str, mut closure: F)
+    where
+        F: FnMut(usize, &str)
+{
+    let mut vec: Vec<(usize, &str)> = Vec::new();
+
+    let mut sequence_vec: Vec<Sequence> = Vec::new();               //Vector di Sequence
+
+    let seq_vec: Vec<&str> = seq.split(",").collect();
+    for sequence in seq_vec {
+        let seq2add = Sequence::from_string(sequence);
+        sequence_vec.push(seq2add);
+    }
+
+    let mut reference_vector: Vec<String> = sequence_vec.iter().nth(0).unwrap().get_variants();
+    for i in 1..sequence_vec.len() {
+        reference_vector = get_permutation(&reference_vector, &sequence_vec.iter().nth(i).unwrap().get_variants());
+    }
+
+    // println!("{:?}", reference_vector);
+
+    for seq2search in reference_vector{
+        match find_sub(s, seq2search.as_str()){
+            None => {}
+            Some(value) => {vec.push(value)}
+        }
+    }
+    if vec.len() == 0 { return}
+    for i in 0..vec.len()-1{
+        if vec.iter().nth(i).unwrap().0 <= vec.iter().nth(i+1).unwrap().0 + vec.iter().nth(i+1).unwrap().1.len() {
+            vec.remove(i);
+        }
+    }
+
+    for element in vec {
+        closure(element.0, element.1);
+    }
+}
+
+#[test]
+pub fn demo4() {
+    let a = "AACGGTAACC".to_string();
+    let seq = "A1-1,C2-4";
+
+    subsequence4(&a, seq, |pos, sub| {
+        println!("Found subsequence at position {}: {}", pos, sub);
+    });
+}
+
 // // Now let's define a struct SimpleDNAIter (add the required lifetimes), memorizing a DNA sequence and the subsequence to search
 // // Then we add a next() method to the struct, which will return the next subsequence found in the DNA sequence after each call
 // // The result of next() is a tuple, but it's wrapped in an Option, because a call to next() may find no more subsequences in the DNA sequence
