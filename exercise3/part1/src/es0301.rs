@@ -52,7 +52,7 @@ fn find_sub<'a, 'b>(s: &'a str, seq: &'b str) -> Option<(usize, &'a str)> {
     }
 
     if i == subseq_vec.len() - 1 && local_counter >= subseq_vec[i].1 && local_counter <= subseq_vec[i].2{
-        return Some((indice-counter as usize, &s[indice-counter as usize..indice] ));
+        return Some((indice-counter as usize, &s[indice-(counter-1) as usize..=indice] ));
     }
     None
 }
@@ -60,7 +60,7 @@ fn find_sub<'a, 'b>(s: &'a str, seq: &'b str) -> Option<(usize, &'a str)> {
 #[test]
 fn test() {
     let a = "AACGGTAACC".to_string();
-    let seq = "C1-2,G2-4";
+    let seq = "T1-2,A2-4";
 
     println!("{:?}", find_sub(a.as_str(), seq));
 }
