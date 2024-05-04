@@ -3,6 +3,7 @@
 // ignore overlaps: if a subsequence is found, the search must continue from the next character
 // missing lifetimes: the result string slices depend only from one input parameter, which one?
 
+
 // suggestion: write a function find_sub(&str, &str) -> Option<(usize, &str)> that finds the first subsequence in a string, you can use it in all the following functions
 fn find_sub<'a, 'b>(s: &'a str, seq: &'b str) -> Option<(usize, &'a str)> {
     let splitted_seq:Vec<&str> = seq.split(",").collect();
@@ -175,38 +176,42 @@ pub fn demo4() {
     });
 }
 
-// // Now let's define a struct SimpleDNAIter (add the required lifetimes), memorizing a DNA sequence and the subsequence to search
-// // Then we add a next() method to the struct, which will return the next subsequence found in the DNA sequence after each call
-// // The result of next() is a tuple, but it's wrapped in an Option, because a call to next() may find no more subsequences in the DNA sequence
-// // In order to implement it, you may add any other attribute to the struct (remember: the struct is stateful and after each call to next() you must start from the last position found)
-// // The struct may be used as shown in the demo_SimpleDNAIter() function
-// // This approach is similar to the previous one, but it's more flexible and it can be used in more complex scenarios. For example you may interrupt it
-// // at any time and resume it later
-//
-// struct SimpleDNAIter<'a> {
-//     s: &str,
-//     seq: &str,
-// }
-//
-// impl SimpleDNAIter {
-//     pub fn new(s: &str, seq: &str) -> Self {
-//         SimpleDNAIter { s: s, seq: seq }
-//     }
-//
-//     pub fn next(&self) -> Option<(usize, &str)> {
-//         unimplemented!()
-//     }
-// }
-//
-// fn demo_SimpleDNAIter() {
-//     let dna_iter = SimpleDNAIter::new("ACGTACGTACGTACGT", "A1-1,C1-1");
-//
-//     while let Some((pos, subseq)) = dna_iter.next() {
-//         println!("Found subsequence at position {}: {}", pos, subseq);
-//         // we can break and stop if we have found what we were looking for
-//     }
-// }
-//
+// Now let's define a struct SimpleDNAIter (add the required lifetimes), memorizing a DNA sequence and the subsequence to search
+// Then we add a next() method to the struct, which will return the next subsequence found in the DNA sequence after each call
+// The result of next() is a tuple, but it's wrapped in an Option, because a call to next() may find no more subsequences in the DNA sequence
+// In order to implement it, you may add any other attribute to the struct (remember: the struct is stateful and after each call to next() you must start from the last position found)
+// The struct may be used as shown in the demo_SimpleDNAIter() function
+// This approach is similar to the previous one, but it's more flexible and it can be used in more complex scenarios. For example you may interrupt it
+// at any time and resume it later
+
+struct SimpleDNAIter<'a, 'b> {
+    s: &'a str,
+    seq: &'b str,
+    resuming_index: usize,
+}
+
+impl<'a, 'b> SimpleDNAIter<'a, 'b> {
+    pub fn new(s: &'a str, seq: &'b str) -> Self {
+        SimpleDNAIter { s, seq, resuming_index: 0 }
+    }
+
+    pub fn next(&mut self) -> Option<(usize, &str)> {
+        let result = find_sub(&self.s[self.resuming_index..], self.seq)?;
+        self.resuming_index += result.0 + result.1.len();
+        return Some((self.resuming_index-result.1.len(), result.1));
+    }
+}
+
+#[test]
+fn demo_simple_dnaiter() {
+    let mut dna_iter = SimpleDNAIter::new("ACGTACGTACGTACGT", "A1-1,C1-1");
+
+    while let Some((pos, subseq)) = dna_iter.next() {
+        println!("Found subsequence at position {}: {}", pos, subseq);
+        // we can break and stop if we have found what we were looking for
+    }
+}
+
 // // finally we want to implement a real iterator, so that it can be used in a for loop and it may be combined we all the most common iterator methods
 // // The struct DNAIter is already defined, you have to implement the Iterator trait for it and add lifetimes
 // struct DNAIter<> {
