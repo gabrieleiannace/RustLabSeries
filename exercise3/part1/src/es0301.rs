@@ -47,12 +47,13 @@ fn find_sub<'a, 'b>(s: &'a str, seq: &'b str) -> Option<(usize, &'a str)> {
             }
         }
         if i == subseq_vec.len() - 1 && local_counter >= subseq_vec[i].1 && local_counter <= subseq_vec[i].2{
-            counter += local_counter;
+            counter += 1;
         }
     }
 
     if i == subseq_vec.len() - 1 && local_counter >= subseq_vec[i].1 && local_counter <= subseq_vec[i].2{
-        return Some((indice-counter as usize, &s[indice-(counter-1) as usize..=indice] ));
+        counter -= 1;
+        return Some((indice-counter as usize, &s[indice-(counter) as usize..=indice] ));
     }
     None
 }
@@ -139,10 +140,10 @@ fn subsequences3<'a, 'b>(s: &'a mut str, seq: &'b str) -> Vec<(usize, usize)> {
 #[test]
 pub fn demo3() {
     let mut a = "AACGGTAACC".to_string();
-    let seq = "A1-2,C2-4";
+    let seq = "A2-2,C1-4";
 
     for (off, sub) in subsequences3(&mut a, seq) {
-        println!("Found subsequence at position {}: {}", off, &mut a[off+1..=sub]);
+        println!("Found subsequence at position {}: {}", off, &mut a[off..sub]);
     }
 }
 
