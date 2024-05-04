@@ -57,21 +57,23 @@ fn find_sub<'a, 'b>(s: &'a str, seq: &'b str) -> Option<(usize, &'a str)> {
     None
 }
 
-#[test]
-fn test() {
-    let a = "AACGGTAACC".to_string();
-    let seq = "T1-2,A2-4";
-
-    println!("{:?}", find_sub(a.as_str(), seq));
-}
-
-
-
-
 fn subsequences1<'a, 'b>(s: &'a str, seq: &'b str) -> Vec<(usize, &'a str)> {
-    unimplemented!()
+    let mut vec:Vec<(usize, &'a str)> = Vec::new();
+    let mut indice = 0;
+    loop{
+        match  find_sub(&s[indice..], seq){
+            None => {break;}
+            Some(result) => {
+                indice = result.0+result.1.len();
+                vec.push(result);
+            }
+        }
+    }
+
+    vec
 }
 
+#[test]
 pub fn demo1() {
     let a = "AACGGTAACC".to_string();
     let seq = "A1-1,C2-4";
