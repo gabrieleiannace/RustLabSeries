@@ -255,28 +255,31 @@ fn demo_dna_iter() {
         });
 }
 
-// // now let's return an iterator without defining a struct, just using a closure
-// // the std lib of rust support you with the std::from_fn() function
-// // we supply a skeleton implementation, you have to fill the closure
-// fn subsequence5_iter(s: &str, seq: &str) -> impl Iterator<Item = (usize, &str)> {
-//     let mut pos = 0;
-//     // and any other necessary variable to remember the state
-//     std::iter::from_fn(move || {
-//         if let Some(k) = find_sub(s[pos..], seq) {
-//             unimplemented!()
-//         } else {
-//             None
-//         }
-//     })
-// }
-//
-// fn demo_dna_iter2() {
-//     subsequence5_iter("ACGTACGTAAACCGTACGT", "A1-3,C1-2")
-//         .filter(|(pos, sub)| sub.len() >= 5)
-//         .for_each(|(pos, sub)| {
-//             println!(
-//                 "Found subsequence at least long 5 at position {}: {}",
-//                 pos, sub
-//             )
-//         });
-// }
+// now let's return an iterator without defining a struct, just using a closure
+// the std lib of rust support you with the std::from_fn() function
+// we supply a skeleton implementation, you have to fill the closure
+fn subsequence5_iter<'a, 'b>(s: &'a str, seq: &'b str) -> impl Iterator<Item = (usize, &'a str)> + 'b where 'a: 'b{
+    let mut pos = 0;
+    // and any other necessary variable to remember the state
+    std::iter::from_fn(move || {
+        if let Some(k) = find_sub(&s[pos..], seq) {
+            println!("{:?} stringa:{}", k, &s[pos..]);
+            pos += k.0+k.1.len();
+            Some((pos, k.1))
+        } else {
+            None
+        }
+    })
+}
+
+#[test]
+fn demo_dna_iter2() {
+    subsequence5_iter("ACGTACGTAAACCGTACGT", "A1-3,C1-2")
+        .filter(|(pos, sub)| sub.len() >= 5)
+        .for_each(|(pos, sub)| {
+            println!(
+                "Found subsequence at least long 5 at position {}: {}",
+                pos, sub
+            )
+        });
+}
