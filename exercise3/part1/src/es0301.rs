@@ -246,7 +246,7 @@ fn demo_dna_iter() {
 
     // now you can combine it with all the iterator modifiers!!!
     dna_iter
-        .filter(|(pos, sub)| sub.len() >= 5)
+        .filter(|(_, sub)| sub.len() >= 5)
         .for_each(|(pos, sub)| {
             println!(
                 "Found subsequence at least long 5 at position {}: {}",
@@ -258,7 +258,7 @@ fn demo_dna_iter() {
 // now let's return an iterator without defining a struct, just using a closure
 // the std lib of rust support you with the std::from_fn() function
 // we supply a skeleton implementation, you have to fill the closure
-fn subsequence5_iter<'a, 'b>(s: &'a str, seq: &'b str) -> impl Iterator<Item = (usize, &'a str)> + 'b where 'a: 'b{
+fn subsequence5_iter<'a>(s: &'a str, seq: &'a str) -> impl Iterator<Item = (usize, &'a str)> {
     let mut pos = 0;
     // and any other necessary variable to remember the state
     std::iter::from_fn(move || {
@@ -275,7 +275,7 @@ fn subsequence5_iter<'a, 'b>(s: &'a str, seq: &'b str) -> impl Iterator<Item = (
 #[test]
 fn demo_dna_iter2() {
     subsequence5_iter("ACGTACGTAAACCGTACGT", "A1-3,C1-2")
-        .filter(|(pos, sub)| sub.len() >= 5)
+        .filter(|(_, sub)| sub.len() >= 5)
         .for_each(|(pos, sub)| {
             println!(
                 "Found subsequence at least long 5 at position {}: {}",
