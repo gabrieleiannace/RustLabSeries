@@ -298,7 +298,19 @@ impl Filesystem {
     // walk the filesystem, starting from the root, and call the closure for each node with its path
     // the first parameter of the closure is the path of the node, second is the node itself
     pub fn walk(&self, f: impl Fn(&str, &Node)) {
-        unimplemented!()
+        let mut visit = VecDeque::from([(String::from(""), &self.root)]);
+        while let Some((path, node)) = visit.pop_front() {
+            f(&path, node);
+
+            match node {
+                Node::Dir(dir) => {
+                    for c in &dir.children {
+                        visit.push_back((format!("{}/{}", path, c.name()), c));
+                    }
+                },
+                _ => {}
+            }
+        }
     }
 }
 
@@ -346,36 +358,36 @@ fn demo() {
     // now let's try to modify the filesystem using the found matches
     // is it possible to do it? which error do you get from the compiler?
     let matches = fs.find(&["/dir2/child1", "/dir3/child1"]);
-    for m in matches {
-        let node = fs.get_mut(m.path.as_str()).unwrap();
-        match node {
-            Node::File(f) => {
-                // inspect content
-            }
-            _ => {}
-        }
-    }
-
-    // // how can you fix the previous code?
-    // // suggestion: this code using paths which are not referenced by MatchResults should compile. Why?
-    // // Therefore how can you use the paths returned in the MatchResults to modify the filesystem?
-    // let paths = ["/dir1/child1", "/dir2/child1", "/dir3/child1"];
-    // for p in paths {
-    //     let n = fs.get_mut(p.as_str());
-    // }
-    //
-    //
-    // // now let's try to walk the filesystem
-    // fs.walk(|path, node| {
+    // for m in matches {
+    //     let node = fs.get_mut(m.path.as_str()).unwrap();
     //     match node {
     //         Node::File(f) => {
-    //             println!("file: {}", path);
+    //             // inspect content
     //         }
-    //         Node::Dir(d) => {
-    //             println!("dir: {}", path);
-    //         }
+    //         _ => {}
     //     }
-    // });
+    // }
+
+    // how can you fix the previous code?
+    // suggestion: this code using paths which are not referenced by MatchResults should compile. Why?
+    // Therefore how can you use the paths returned in the MatchResults to modify the filesystem?
+    let paths = ["/dir1/child1", "/dir2/child1", "/dir3/child1"];
+    for p in paths {
+        let n = fs.get_mut(p);
+    }
+
+
+    // now let's try to walk the filesystem
+    fs.walk(|path, node| {
+        match node {
+            Node::File(f) => {
+                println!("file: {}", path);
+            }
+            Node::Dir(d) => {
+                println!("dir: {}", path);
+            }
+        }
+    });
 
 }
 
