@@ -59,7 +59,7 @@ impl Filesystem {
     pub fn new() -> Self {
         Self{
             root: Node::Dir(Dir{
-                name: "".to_string(),
+                name: "C:/Users/gabri/Desktop".to_string(),
                 modified: SystemTime::now(),
                 children: vec![]
             })
@@ -78,6 +78,14 @@ impl Filesystem {
     // return a reference the created dir
     // possible errors: NotFound, path NotADir, Duplicate
     pub fn mkdir<'a>(&mut self, path: &str, name: &str) -> Result<&mut Dir, FSError> {
+        //Check duplicate
+        match self.get_mut(format!("{path}{name}").as_str()){
+            Ok(_) => {return Err(FSError::Duplicate)}
+            Err(_) => {}
+        }
+
+
+
         let root_str = String::from(self.root.name().as_str());
         let mutreference = self.get_mut(path)?;
         let absolute_path = format!("{root_str}{path}{name}");
@@ -85,7 +93,18 @@ impl Filesystem {
             Ok(_) => {
                 match mutreference {
                     Node::File(_) => {Err(FSError::NotADir)}
-                    Node::Dir(dir) => {Ok(dir)}
+                    Node::Dir(dir) => {
+                        let final_dir = Node::Dir(Dir{
+                            name: name.to_string(),
+                            modified: SystemTime::now(),
+                            children: vec![]
+                        });
+                        dir.children.push(final_dir);
+                        match self.get_mut(format!("{path}{name}").as_str())?{
+                            Node::File(_) => {Err(FSError::NotADir)}
+                            Node::Dir(mutdir) => {return Ok(mutdir)}
+                        }
+                    }
                 }
             }
             Err(_) => {Err(FSError::GenericError)}
@@ -113,7 +132,34 @@ impl Filesystem {
 
     // get a reference to a node in the filesystem, given the path
     pub fn get(&mut self, path: &str) -> Result<&Node, FSError> {
-        unimplemented!()
+        if path == "/" { return Ok(&self.root)}
+
+        let mut path_nodes: VecDeque<&str> = path.split("/").collect();
+        let mut current_node = &self.root;
+
+        while let Some(p) = path_nodes.pop_front(){
+            if path_nodes.len() == 0 {
+                if current_node.name() == p{
+                    return Ok(current_node)
+                }
+                else {return Err(FSError::NotFound)}
+            }
+
+            match current_node {
+                Node::File(_) => {return Err(FSError::NotADir)}
+                Node::Dir(d) => {
+                    let pos = d.children.iter().position(|n| n.name() == path_nodes[0]);
+                    // now we can get it as mutable
+                    if let Some(i) = pos {
+                        current_node = d.children.get(i).unwrap();
+                    } else {
+                        return Err(FSError::NotFound);
+                    }
+                }
+            }
+
+        }
+        Err(FSError::GenericError)
     }
 
     // get a mutable reference to a node in the filesystem, given the path
@@ -173,7 +219,10 @@ impl Filesystem {
 #[test]
 fn test(){
     let mut fs = Filesystem::new();
-    fs.mkdir("/", "nome");
+    let pippo = fs.mkdir("/", "nome");
+    let pippo = fs.mkdir("/", "nome");
+    println!("{:?}", pippo);
+
 }
 
 fn demo() {
