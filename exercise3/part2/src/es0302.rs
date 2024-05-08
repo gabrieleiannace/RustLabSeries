@@ -122,7 +122,40 @@ impl Filesystem {
 
     // possible errors: NotFound, path is NotADir, Duplicate
     pub fn create_file(&mut self, path: &str, name: &str) -> Result<&mut File, FSError> {
-        Err(FSError::GenericError)
+        let root_str = String::from(self.root.name().as_str());
+        let mut correct_path = String::from(path);
+        if path.chars().last().unwrap() != '/' { correct_path.push('/'); }
+        let absolute_path = format!("{root_str}{correct_path}{name}");
+        match fs::File::create_new(absolute_path){
+            Ok(_) => {
+                let mut correct_path = String::from(path);
+                if path.chars().last().unwrap() == '/'  && path.len() > 1 { correct_path.pop(); }
+                //Ora trovo il padre e lo aggiungo
+                match self.get_mut(correct_path.as_str()){
+                    Ok(father_node) => {
+                        match father_node{
+                            Node::File(_) => {Err(FSError::NotADir)}
+                            Node::Dir(father_dir) => {
+                                let file = Node::File(File {
+                                    name: name.to_string(),
+                                    modified: SystemTime::now(),
+                                    content: vec![],
+                                });
+                                father_dir.children.push(file);
+                                let mut correct_path = String::from(path);
+                                if path.chars().last().unwrap() != '/'  && path.len() > 1 { correct_path.push('/'); }
+                                match self.get_mut(format!("{correct_path}{name}").as_str())?{
+                                    Node::File(file) => {Ok(file)}
+                                    Node::Dir(_) => {Err(FSError::NotADir)}
+                                }
+                            }
+                        }
+                    }
+                    Err(_) => {Err(FSError::NotFound)}
+                }
+            }
+            Err(_) => {return Err(FSError::GenericError)}
+        }
     }
 
     // updated modification time of the file or the dir
@@ -248,7 +281,7 @@ fn demo() {
     for i in 0..10 {
         fs.mkdir("/", format!("dir{}", i).as_str()).unwrap();
         fs.mkdir(format!("/dir{}", i).as_str(), "child1").unwrap();
-        //fs.create_file(format!("/dir{}", i).as_str(), "file1").unwrap();
+        fs.create_file(format!("/dir{}", i).as_str(), "file1").unwrap();
     }
 
     // println!("find /child2");
