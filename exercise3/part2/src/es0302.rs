@@ -59,7 +59,7 @@ impl Filesystem {
     pub fn new() -> Self {
         Self{
             root: Node::Dir(Dir{
-                name: "C:/Users/gabri/Desktop".to_string(),
+                name: "C:/Users/gabri/Desktop/Lab3".to_string(),
                 modified: SystemTime::now(),
                 children: vec![]
             })
@@ -87,20 +87,28 @@ impl Filesystem {
 
 
         let root_str = String::from(self.root.name().as_str());
-        let mutreference = self.get_mut(path)?;
-        let absolute_path = format!("{root_str}{path}{name}");
+        let father_node = self.get_mut(path)?;
+        let mut correct_path: String = String::from(path);
+        if path.chars().last().unwrap() != '/' {
+            correct_path.push('/');
+        }
+        let absolute_path = format!("{root_str}{correct_path}{name}");
         match fs::create_dir(absolute_path){
             Ok(_) => {
-                match mutreference {
+                match father_node {
                     Node::File(_) => {Err(FSError::NotADir)}
-                    Node::Dir(dir) => {
+                    Node::Dir(father_dir) => {
                         let final_dir = Node::Dir(Dir{
                             name: name.to_string(),
                             modified: SystemTime::now(),
                             children: vec![]
                         });
-                        dir.children.push(final_dir);
-                        match self.get_mut(format!("{path}{name}").as_str())?{
+                        father_dir.children.push(final_dir);
+                        let mut correct_path: String = String::from(path);
+                        if path.chars().last().unwrap() != '/' {
+                            correct_path.push('/');
+                        }
+                        match self.get_mut(format!("{correct_path}{name}").as_str())?{
                             Node::File(_) => {Err(FSError::NotADir)}
                             Node::Dir(mutdir) => {return Ok(mutdir)}
                         }
@@ -114,7 +122,7 @@ impl Filesystem {
 
     // possible errors: NotFound, path is NotADir, Duplicate
     pub fn create_file(&mut self, path: &str, name: &str) -> Result<&mut File, FSError> {
-        unimplemented!()
+        Err(FSError::GenericError)
     }
 
     // updated modification time of the file or the dir
@@ -164,32 +172,38 @@ impl Filesystem {
 
     // get a mutable reference to a node in the filesystem, given the path
     pub fn get_mut(&mut self, path: &str) -> Result<&mut Node, FSError> {
-        if path == "/" { return Ok(&mut self.root)}
 
-        let mut path_nodes: VecDeque<&str> = path.split("/").collect();
-        let mut current_node = &mut self.root;
+        if path == "/" {
+            return  Ok(&mut self.root);
+        }
 
-        while let Some(p) = path_nodes.pop_front(){
-            if path_nodes.len() == 0 {
-                if current_node.name() == p{
-                    return Ok(current_node)
+        let mut parts = path.split("/").collect::<VecDeque<&str>>();
+        let mut cnode = &mut self.root;
+
+        while let Some(part) = parts.pop_front() {
+            if parts.len() == 0 {
+                if cnode.name() == part {
+                    return Ok(cnode);
+                } else {
+                    return Err(FSError::NotFound);
                 }
-                else {return Err(FSError::NotFound)}
             }
 
-            match current_node {
-                Node::File(_) => {return Err(FSError::NotADir)}
+            match cnode {
                 Node::Dir(d) => {
-                    let pos = d.children.iter().position(|n| n.name() == path_nodes[0]);
+
+                    let pos = d.children.iter().position(|n| n.name() == parts[0]);
                     // now we can get it as mutable
                     if let Some(i) = pos {
-                        current_node = d.children.get_mut(i).unwrap();
+                        cnode = d.children.get_mut(i).unwrap();
                     } else {
                         return Err(FSError::NotFound);
                     }
                 }
+                Node::File(_) => {
+                    return Err(FSError::NotADir);
+                }
             }
-
         }
         Err(FSError::GenericError)
     }
@@ -216,15 +230,16 @@ impl Filesystem {
     }
 }
 
+// #[test]
+// fn test(){
+//     let mut fs = Filesystem::new();
+//     let pippo = fs.mkdir("/", "nome");
+//     let pippo = fs.mkdir("/", "nome");
+//     println!("{:?}", pippo);
+//
+// }
+
 #[test]
-fn test(){
-    let mut fs = Filesystem::new();
-    let pippo = fs.mkdir("/", "nome");
-    let pippo = fs.mkdir("/", "nome");
-    println!("{:?}", pippo);
-
-}
-
 fn demo() {
 
     let mut fs = Filesystem::new();
@@ -233,7 +248,7 @@ fn demo() {
     for i in 0..10 {
         fs.mkdir("/", format!("dir{}", i).as_str()).unwrap();
         fs.mkdir(format!("/dir{}", i).as_str(), "child1").unwrap();
-        fs.create_file(format!("/dir{}", i).as_str(), "file1").unwrap();
+        //fs.create_file(format!("/dir{}", i).as_str(), "file1").unwrap();
     }
 
     // println!("find /child2");
