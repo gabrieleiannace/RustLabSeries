@@ -342,20 +342,20 @@ fn demo() {
         }
     }
 
-    // // see note "riferimenti mutabili" in exercise text
-    // // now let's try to modify the filesystem using the found matches
-    // // is it possible to do it? which error do you get from the compiler?
-    // let matches = fs.find(&["/dir2/child1", "/dir3/child1"]);
-    // for m in matches {
-    //     let node = fs.get_mut(m.path).unwrap();
-    //     match node {
-    //         Node::File(f) => {
-    //             // inspect content
-    //         }
-    //         _ => {}
-    //     }
-    // }
-    //
+    // see note "riferimenti mutabili" in exercise text
+    // now let's try to modify the filesystem using the found matches
+    // is it possible to do it? which error do you get from the compiler?
+    let matches = fs.find(&["/dir2/child1", "/dir3/child1"]);
+    for m in matches {
+        let node = fs.get_mut(m.path.as_str()).unwrap();
+        match node {
+            Node::File(f) => {
+                // inspect content
+            }
+            _ => {}
+        }
+    }
+
     // // how can you fix the previous code?
     // // suggestion: this code using paths which are not referenced by MatchResults should compile. Why?
     // // Therefore how can you use the paths returned in the MatchResults to modify the filesystem?
