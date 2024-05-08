@@ -1,6 +1,6 @@
 use std::arch::x86_64::_mulx_u32;
 use std::collections::VecDeque;
-use std::fs;
+use std::{fs, vec};
 use std::time::SystemTime;
 
 #[derive(Debug)]
@@ -252,9 +252,48 @@ impl Filesystem {
     // - "partname:value" -> match only nodes with the given string in the name
 
     pub fn find<'a>(&'a self, qs: &[&'a str]) -> Vec<MatchResult> {
-        unimplemented!()
+        let mut res:Vec<MatchResult>= Vec::new();
+        let mut visit = VecDeque::from([&self.root]);
+        while let Some(n) = visit.pop_front() {
+            //Per ogni filtro
+            for q in qs {
+                if Filesystem::do_match(q, n) {
+                    let m = MatchResult {
+                        q,
+                        path: "".to_string(),
+                        node: &n,
+                    };
+                    res.push(m);
+                }
+            }
+            match n {
+                Node::File(_) => {}
+                Node::Dir(dir) => {
+                    for c in &dir.children {visit.push_back(c);}
+                }
+            }
+        }
+        res
     }
 
+    fn do_match(qs: &str, n: &Node) -> bool {
+        let parts: Vec<&str> = qs.split(":").collect();
+        match parts[0]{
+            "type" => {
+                match n {
+                    Node::File(_)       =>      {return parts[1] == "file"}
+                    Node::Dir(_)        =>      {return parts[1] == "dir"}
+                }
+            },
+            "name" => {
+                    return n.name()     ==      parts[1]
+            },
+            "partname" => {
+                    return n.name().contains(parts[1])
+            },
+            _ => {return false}
+        }
+    }
 
     // walk the filesystem, starting from the root, and call the closure for each node with its path
     // the first parameter of the closure is the path of the node, second is the node itself
@@ -262,15 +301,6 @@ impl Filesystem {
         unimplemented!()
     }
 }
-
-// #[test]
-// fn test(){
-//     let mut fs = Filesystem::new();
-//     let pippo = fs.mkdir("/", "nome");
-//     let pippo = fs.mkdir("/", "nome");
-//     println!("{:?}", pippo);
-//
-// }
 
 #[test]
 fn demo() {
@@ -284,33 +314,34 @@ fn demo() {
         fs.create_file(format!("/dir{}", i).as_str(), "file1").unwrap();
     }
 
-    // println!("find /child2");
-    // if let Ok(res) = fs.get("/dir2/child1") {
-    //     match res {
-    //         Node::Dir(d) => {
-    //             d.name = "dir2 found".to_string();
-    //         }
-    //         // try to match all possible errros
-    //         _ => {}
-    //     }
-    // } else {
-    //     println!("not found");
-    // }
-    //
-    // // let's try with matches
-    // let matches = fs.find(&["name:child1", "type:file"]);
-    // for m in matches {
-    //     match m.node {
-    //         Node::File(f) => {
-    //             // inspect content
-    //         },
-    //         Node::Dir(d) => {
-    //             // inspect children
-    //         },
-    //         _ => {}
-    //     }
-    // }
-    //
+    println!("find /child2");
+    if let Ok(res) = fs.get_mut("/dir2/child1") {
+        match res {
+            Node::Dir(d) => {
+                d.name = "dir2 found".to_string();
+            }
+            // try to match all possible errros
+            _ => {}
+        }
+    } else {
+        println!("not found");
+    }
+
+    // let's try with matches
+    let matches = fs.find(&["name:child1", "type:file"]);
+    for m in matches {
+        match m.node {
+            Node::File(f) => {
+                println!("{:?}", f);
+            },
+            Node::Dir(d) => {
+                // inspect children
+                println!("{:?}", d);
+            },
+            _ => {}
+        }
+    }
+
     // // see note "riferimenti mutabili" in exercise text
     // // now let's try to modify the filesystem using the found matches
     // // is it possible to do it? which error do you get from the compiler?
