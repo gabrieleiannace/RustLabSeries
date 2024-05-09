@@ -1,6 +1,6 @@
 # Esercitazione 4
 ## Esercizio 1
-Il file es0401.rs contiene due moduli List1 e List2, con due modelli alternativi per
+Il file `es0401.rs` contiene due moduli List1 e List2, con due modelli alternativi per
 implementare una linked list.  
 Il primo modello si basa su una enum, come visto a lezione, con una definizione ricorsiva
 della lista. Il secondo modello invece utilizza un layout basato su una struct Node con un
