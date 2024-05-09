@@ -43,7 +43,10 @@ pub mod List1 {
 
         // return a referece to the first element of the list
         pub fn peek(&self) -> Option<&T> {
-            unimplemented!()
+            match &self.head {
+                ListLink::Nil => None,
+                ListLink::Cons(element, _) => Some(element)
+            }
         }
 
         // uncomment after having implemented the ListIter struct
