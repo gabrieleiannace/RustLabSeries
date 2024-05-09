@@ -1,4 +1,3 @@
-use std::mem;
 
 pub mod List1 {
     use std::mem;
@@ -51,28 +50,44 @@ pub mod List1 {
 
         // uncomment after having implemented the ListIter struct
         // return an interator over the list values
-        //fn iter(&self) -> ListIter<T> {
-        //    unimplemented!()
-        //}
+        fn iter(&self) -> ListIter<T> {
+            ListIter{
+                next: &self.head,
+            }
+        }
 
         // take the first n elements of the list and return a new list with them
         pub fn take(&mut self, n: usize) -> List<T> {
-            unimplemented!()
+            let mut new_list = List::new();
+            for _ in 0..n {
+                if let Some(element) = self.pop(){
+                    new_list.push(element);
+                }
+            }
+            new_list
         }
     }
 
 
-    //struct ListIter {
-    //    // implement the iterator trait for ListIter
-    //}
-    //
-    //impl Iterator for ListIter {
-    //    //type Item = ...
-    //
-    //    fn next(&mut self) -> Option<Self::Item> {
-    //        unimplemented!()
-    //    }
-    //}
+    struct ListIter<'a, T> {
+       // implement the iterator trait for ListIter
+       next: &'a ListLink<T>
+    }
+    
+    impl<'a, T> Iterator for ListIter<'a, T> {
+        //Poichè vogliamo restituire i valori nella lista, non i nodi nella lista
+       type Item = &'a T;
+    
+       fn next(&mut self) -> Option<Self::Item> {
+           match &self.next{
+            ListLink::Nil => None,
+            ListLink::Cons(e, n) => {
+                self.next = n;
+                Some(e)
+            }
+           }    
+       }
+    }
 
     // something that may be useful for the iterator implementation:
     // let a = Some(T);
@@ -80,7 +95,6 @@ pub mod List1 {
     // match b { Some(i) => ... } // here i is a reference to T
 
 }
-
 
 pub mod List2 {
 
@@ -137,3 +151,4 @@ pub mod List2 {
     // head: NodeLink,
     // tail: NodeLink
 // }
+
