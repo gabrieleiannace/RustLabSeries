@@ -109,7 +109,7 @@ pub mod List2 {
         head: NodeLink<T>,
     }
 
-    // for this implementattion, since we are using option, take a look at the take method in Option<T>.
+    // for this implementation, since we are using option, take a look at the take method in Option<T>.
     // It allows to move the value of the option into another option and replace it with None
     // let mut a = Some(5);
     // let b = a.take(); // a is now None and b is Some(5)
