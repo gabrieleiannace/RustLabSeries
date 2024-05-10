@@ -15,7 +15,16 @@ let mut l2 = List2::List::<i32>::new();
 l2.push(10)
 ```
 Dove sono allocate le head di l1 e l2?  
+***
+_Risposta:_ Le head di l1 e l2 sono allocate nel heap.  
+Nel caso di l1, la head è un'enum ListLink che può essere Nil o Cons. Quando chiami push, crei un nuovo Cons che contiene il valore e un box che punta al vecchio head. Questo box è un puntatore a heap, quindi il vecchio head viene spostato nel heap.  
+Nel caso di l2, la head è un Option<Box<Node<T>>>. Quando chiami push, crei un nuovo Node che viene messo in un box e quindi nel heap. Quindi, la head di l2 è anche nel heap.  
+***
+
 Che differenze ci sono nell’ultimo nodo tra l1 e l2?  
+***
+_Risposta:_ In entrambi i casi, l'ultimo nodo si trova nello heap. La differenza principale è che in l1 l'ultimo nodo è un ListLink::Nil, mentre in l2 è un None.
+***
 
 Infine modificare List2 per renderla una lista doppio linkata:
 - si avranno due puntatori, alla testa (head) e alla coda (tail) della lista e ogni nodo
