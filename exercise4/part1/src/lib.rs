@@ -1,4 +1,4 @@
-pub mod List1 {
+pub mod list1 {
     use std::mem;
 
     #[derive(Debug)]
@@ -90,18 +90,21 @@ pub mod List1 {
     // match b { Some(i) => ... } // here i is a reference to T
 }
 
-pub mod List2 {
-    use std::{cell::RefCell, rc::Rc};
+pub mod list2 {
+    use std::{cell::RefCell, mem, rc::{Rc, Weak}};
 
-    #[derive(Debug)]
+    /// Rappresenta un nodo nella lista.
+    #[derive(Debug, Default)]
     pub struct Node<T> {
         elem: T,
         next: NodeLink<T>,
-        previous: NodeLink<T>,
+        previous: WeakNodeLink<T>,
     }
 
     type NodeLink<T> = Option<Rc<RefCell<Node<T>>>>;
+    type WeakNodeLink<T> = Option<Weak<RefCell<Node<T>>>>;
 
+    /// Rappresenta una lista collegata.
     #[derive(Debug)]
     pub struct List<T> {
         head: NodeLink<T>,
@@ -109,6 +112,7 @@ pub mod List2 {
     }
 
     impl<T> List<T> {
+        /// Crea una nuova istanza di `List`.
         pub fn new() -> Self {
             List {
                 head: None,
@@ -116,31 +120,71 @@ pub mod List2 {
             }
         }
 
-        pub fn push_front(&mut self, elem: T) {
-            let head_provvisoria = self.head.take();
-            match &head_provvisoria {
-                Some(head) => {
+        /// Aggiunge un elemento all'inizio della lista.
+        pub fn push_front(&mut self, elem: T){
+            let old_head = self.head.take();
+            match &old_head{
+                Some(old_head_node) => {
                     let enode = Rc::new(RefCell::new(Node{
                         elem,
-                        next: Some(Rc::clone(head)),
-                        previous: None
+                        next: old_head.clone(),
+                        previous: None,
                     }));
                     let weak_enode = Rc::downgrade(&enode);
-                    let mut old_head = (*head).borrow_mut();
-                    old_head.previous = weak_enode.upgrade();
-                    drop(weak_enode);
-                    self.head = Some(Rc::clone(&enode));
-                }
+                    let mut old_head_node = (**old_head_node).borrow_mut();
+                    (*old_head_node).previous = Some(weak_enode);
+                    self.head = Some(enode);
+                },
                 None => {
-                    let enode = Rc::new(RefCell::new(Node {
+                    let enode = Rc::new(RefCell::new(Node{
                         elem,
                         next: None,
                         previous: None,
                     }));
-                    self.head = Some(Rc::clone(&enode));
-                    self.tail = Some(Rc::clone(&enode));
-                }
+                    self.head = Some(enode.clone());
+                    self.tail = Some(enode.clone());
+                },
+            }            
+        }
+
+        /// Aggiunge un elemento alla fine della lista.
+        pub fn push_back(&mut self, elem: T){
+            let old_tail = self.tail.take();
+            match &old_tail {
+                Some(old_tail_node) => {
+                    let enode = Rc::new(RefCell::new(Node {
+                        elem,
+                        next: None,
+                        previous: Some(Rc::downgrade(&old_tail_node)),
+                    }));
+                    self.tail = Some(enode.clone());
+                },
+                None => {
+                    let enode = Rc::new(RefCell::new(Node {
+                        elem,
+                        next: None,
+                        previous: None
+                    }));
+                    self.tail = Some(enode.clone());
+                    self.head = Some(enode.clone());
+                },
             }
+        }
+
+
+        pub fn pop_front(&mut self) -> Option<T> {
+            //prendo il nodo head
+            let old_head = self.head.take();
+            match &old_head {
+                Some(old_head_node) => {
+                    
+                },
+                None => todo!(),
+            }
+            
+            
+            
+            None
         }
     }
 }
