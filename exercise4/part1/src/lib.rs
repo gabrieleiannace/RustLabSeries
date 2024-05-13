@@ -172,22 +172,27 @@ pub mod list2 {
         }
 
 
-        pub fn pop_front(&mut self) -> Option<T> where T: Default{            
-            let mut res = T::default();
-            match &self.head.take(){
-                Some(old_head_node) => {                    
-                    match &(*old_head_node).borrow_mut().next{
-                        Some(head) => {
-                            let mut new_head = (*head).borrow_mut();
-                            new_head.previous = None;
-                            res = mem::take(&mut new_head.elem);
+        pub fn pop_front(&mut self) -> Option<T> where T: Clone{            
+            let old_head = self.head.take();
+            match &old_head {
+                Some(node_old_head) => {
+                    let b_node_old_head = (*node_old_head).borrow();
+                    let res = b_node_old_head.elem.clone();
+                    match &b_node_old_head.next {
+                        Some(new_head) => {
+                            let mut mut_node_new_head = (*new_head).borrow_mut();
+                            mut_node_new_head.previous = None;
+                            self.head = Some(new_head.clone());
                             return Some(res);
                         },
-                        None => todo!(),
-                    }        
-
+                        None => {
+                            self.head = None;
+                            self.tail = None;
+                            return Some(res);
+                        },
+                    }
                 },
-                None => todo!(),
+                None => {return None;},
             }
             None
         }
